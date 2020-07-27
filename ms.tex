@@ -1,0 +1,1255 @@
+% Copyright (c) 2020 Carl Martin Ludvig Sinander.
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+%                                   _     _      
+%    _ __  _ __ ___  __ _ _ __ ___ | |__ | | ___ 
+%   | '_ \| '__/ _ \/ _` | '_ ` _ \| '_ \| |/ _ \
+%   | |_) | | |  __/ (_| | | | | | | |_) | |  __/
+%   | .__/|_|  \___|\__,_|_| |_| |_|_.__/|_|\___|
+%   |_|                                          
+
+
+%%% bug catcher
+\RequirePackage[l2tabu,orthodox]{nag}
+
+%%% document class
+\documentclass[11pt,letterpaper,reqno,oneside]{article}
+
+%%% settings
+\input{preamble.tex}
+
+%%% bibliography
+\addbibresource{bibl.bib}
+
+%%% externalise TikZ drawings
+% \usetikzlibrary{external}
+% \tikzexternalize
+
+
+
+%______________________________________________________________________________
+
+
+
+
+%    _____ _ _   _      
+%   |_   _(_) |_| | ___ 
+%     | | | | __| |/ _ \
+%     | | | | |_| |  __/
+%     |_| |_|\__|_|\___|
+
+
+\title{\scshape Economic theory and methods \\
+	\vspace{0.5em}
+	\large \scshape Taught by Eddie Dekel \\
+	\large \scshape Northwestern University, fall 2016
+	}
+
+\author{Ludvig Sinander \\ Northwestern University}
+
+\date{\small This version: 28 March 2017}
+
+\makeatletter
+	\AtBeginDocument{ \hypersetup{ 
+		pdftitle = {Economic theory and methods}, 
+		pdfauthor = {Ludvig Sinander} 
+		} }
+\makeatother
+
+
+
+%______________________________________________________________________________
+
+
+
+
+%    ____                                        _   
+%   |  _ \  ___   ___ _   _ _ __ ___   ___ _ __ | |_ 
+%   | | | |/ _ \ / __| | | | '_ ` _ \ / _ \ '_ \| __|
+%   | |_| | (_) | (__| |_| | | | | | |  __/ | | | |_ 
+%   |____/ \___/ \___|\__,_|_| |_| |_|\___|_| |_|\__|
+
+
+\begin{document}
+
+\maketitle
+
+
+\noindent
+These notes are based on part of a theory course for second-year PhD students taught by Eddie Dekel at Northwestern in fall 2016. The topics are belief hierarchies and robustness.\\
+
+\noindent
+I thank Eddie for teaching a great class and for agreeing to let me share these notes.
+
+
+
+\pagebreak
+\hspace{1pt}\vfill
+\noindent
+Copyright \copyright{} 2020 Carl Martin Ludvig Sinander.
+
+\begin{quotation}
+\noindent
+Permission is granted to copy, distribute and/or modify this document under the terms of the \href{https://www.gnu.org/licenses/fdl}{GNU Free Documentation License}, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled `GNU
+Free Documentation License'.
+\end{quotation}
+
+\noindent
+This is a `copyleft' licence.
+Visit \href{https://www.gnu.org/licenses/copyleft}{gnu.org/licenses/copyleft} to learn more.
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+% Table of contents
+\pagebreak
+\microtypesetup{protrusion=false}
+\tableofcontents
+\microtypesetup{protrusion=true}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hierarchies}
+\label{sec:hierarchies}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\textcite{Siniscalchi2008} is a very good supplement to this section, especially on the interpretation of what we are doing. (Download the working paper version from Marciano's website, it's much better-typeset than the published version.)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Knowledge and common knowledge}
+\label{sec:belief_hierarchies:K_and_CK}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The standard model of knowledge and belief in economics is as follows.%
+	\footnote{See e.g. \textcite[][ch. 5]{OsborneRubinstein1994}.}
+There is a set $\Omega$ of states of the world, equipped with a $\sigma$-algebra $\Sigma$. Each agent $i \in I$ is endowed with a map $\Pi_i : \Omega \to \Sigma$ such that $F_i(\Omega)$ is a partition of $\Omega$. We call $\Pi_i$ a partitional information function, or simply partition function.
+
+One topic that this framework allows us to address is that of common knowledge. For each $i \in I$, define the knowledge function $K_i : \Sigma \to \Sigma$ by
+%
+\begin{equation*}
+	K_i(E) \coloneqq \left\{ \omega \in \Omega : \Pi_i(\omega) \subseteq E \right\} 
+	\quad \forall E \in \Sigma .
+\end{equation*}
+%
+(So $\omega \in K_i(E)$ reads `$i$ knows $E$ at $\omega$'.) For any event $E \in \Sigma$, define $E_0 \coloneqq E$, $E_n \coloneqq \Intersect_{i \in I} K_i(E_{n-1})$ for each $n \in \N$, and $C(E) \coloneqq \Intersect_{n \in \N} E_n$. We say that $E \in \Sigma$ is common knowledge at $\omega \in \Omega$ iff $\omega \in C(E)$, and we call $C : \Sigma \to \Sigma$ the common-knowledge function.
+
+Say that a set $F \in \Sigma$ is self-evident iff $\Pi_i(\omega) \subseteq F$ for every $\omega \in F$ and $i \in I$.%
+	\footnote{Equivalently, $F$ is self-evident iff $K_i(F) \supseteq F$ for every $i \in I$.}
+Aumann's (\citeyear{Aumann1976}) original definition was that $E \in \Sigma$ is common knowledge at $\omega \in \Omega$ iff there is a self-evident set $F \in \Sigma$ such that $\omega \in F \subseteq E$. It is not hard to show that the two definitions are equivalent; see e.g. \textcite[][Proposition 74.2]{OsborneRubinstein1994}.%
+	\footnote{Milgrom's (\citeyear{Milgrom1981ecta}) axiomatic characterisation of common knowledge provides yet another equivalent definition.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Why do we need a universal type space?}
+\label{sec:belief_hierarchies:why_universal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It seems sensible enough to read $K_j(E)$ and $K_i(F)$ as `$j$ knows that $E$' and `$i$ knows that $F$'. But $K_i( K_j(E) )$ then reads `$i$ knows that $K_j(E)$'. If we want this to read `$i$ knows that $j$ knows that $E$', then we have to assume that $i$ recognises that $K_j(E)$ is equivalent to `$j$ knows that $E$'. But that requires that $i$ `knows' $j$'s partition function $\Pi_j$.
+
+More generally, our definition of common knowledge can only be interpreted to mean that `everyone knows that everyone knows that everyone knows\dots' if we assume that that partition functions $\{ \Pi_i \}_{i \in I}$ are `commonly known'. (Of course they cannot be common knowledge in the formal sense; hence the scare quotes.)
+
+There is a view, usually attributed to Aumann (see e.g. his \citeyear{Aumann1999I}), that it is without loss of generality to assume that partitions $\{ \Pi_i \}_{i \in I}$ are `common knowledge'. The argument is that if the partitions are not `commonly known', then we need to consider a larger state space in which the states pin down what players know about each others' information.
+
+It sounds like this might work, but (at least to me) it isn't obvious that it will. For example, the following approach will not work. If $i$ and $j$ have partitions $\in \Sigma^\Omega$ of $\Omega$ that are not `common knowledge', expand the state space to $\Omega \times \Sigma^\Omega \times \Sigma^\Omega$. Unfortunately, there is no reason why the partitions of this enlarged state space should be `common knowledge', either. We can continue expanding in this way as many times as we like, but there is no guarantee that we will eventually obtain `common knowledge'.
+
+The construction of a universal type space that we are about to carry out establishes that Aumann's intuition is in fact correct.%
+	\footnote{There is another approach to deriving `common knowledge' of partitions from more primitive assumptions. The idea is to define an epistemic logic, then to derive a state space and partitions from its sentences. This course is pursued by \textcite{Aumann1999I}; he calls it the `syntactic' approach.}
+In particular, consider the enlarged state space $\Omega \times T^I$, where $T$ is the universal type space. A state $\in \Omega \times T^I$ contains information both about $\omega \in \Omega$ and about the beliefs $\in T$ of each player. We will see that when it is `common knowledge' that beliefs are coherent (not self-contradictory), we get `common knowledge' of players' partitions of $\Omega \times T^I$ for free.
+
+
+There is another motivation for what we are about to do. Consider a game of incomplete information, in which payoffs depend on a random element of some space $S$. In order to determine what she should do, player $i$ must give consideration not just to her belief over $S$, but also to $j$'s (joint) belief over $i$'s belief over $S$ and $S$, and so on. This directly leads us to consider an infinite hierarchy of beliefs.
+
+Consider a seemingly different object: a particular kind of extensive-form game of imperfect information with a chance move, called a Bayesian game. In a Bayesian game, each player is endowed with a `type space' $(T_i,\mu_i)$, where $T_i$ is a set and $\mu_i(t_i)$ for each $t_i \in T_i$ is a belief over $S \times T_{-i}$. Nature draws the state and each player's type from $S \times \prod_{i \in I} T_i$. Each player learns (only) her own type $t_i \in T_i$, and forms a belief $\mu_i(t_i)$ over $S \times T_{-i}$ (possibly by updating a prior). The beliefs $\{ \mu_i \}_{i \in I}$ clearly give rise to a belief hierarchy over $S$: beliefs over $S$, beliefs over $-i$'s types and hence $-i$'s beliefs over $S$, beliefs over $-i$'s beliefs over $i$'s types and hence $i$'s beliefs, and so on. 
+
+\textcite{Harsanyi1967} argued informally that it is without loss to model games of incomplete information as Bayesian games. He reasoned that any belief hierarchy arising in a game of incomplete information can be generated by some type space in a Bayesian game; hence any incomplete-information game is strategically equivalent to some Bayesian game. This approach to studying games of incomplete information has been enormously fruitful!
+
+But the claim that it is without loss of generality to study Bayesian games remains unproven. Of course we may choose the largest possible (i.e. universal) type space for each player, viz. the set $T$ of all hierarchies. As with any type space, any belief over $S \times T^{\abs*{I}-1}$ generates a hierarchy $\in T$. But the formulation of a Bayesian game requires the inverse: an $f$ that maps each hierarchy $\in T$ into a unique belief over $S \times T^{\abs*{I}-1}$. We will prove the existence (and uniqueness, and continuity, and more) of this inverse, and thereby put Harsányi's (\citeyear{Harsanyi1967}) suggestion on firm footing.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Construction of the universal type space}
+\label{sec:belief_hierarchies:construction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The universal type space was first constructed by \textcite{ArmbrusterBoge1979} and \textcite{BogeEisele1979};%
+	\footnote{Bibliographical note: \textcite{ArmbrusterBoge1979} is often erroneously cited as having been published in 1976. (Perhaps there was a working paper in 1976?)}
+both are mathematically difficult. The first construction that became well-known in economics was \textcite{MertensZamir1985}; this one is easier, but still uses some heavy machinery. We're going to follow \textcite{BrandenburgerDekel1993}, whose argument is much simpler and more transparent.
+
+A topological space $Z$ is Polish iff it is separable and completely metrisable. Note that a totally bounded Polish space is compact. For a Polish space $Z$, let $\Delta(Z)$ denote the set of measures on the Borel $\sigma$-field of $Z$, and endow it with the weak$^\star$ topology (the topology of weak convergence). Then $\Delta(Z)$ is compact Polish.%
+	\footnote{$\Delta(Z)$ is metrisable since the weak$^\star$ topology is metrisable (by e.g. the Prohorov metric; see \textcite[][pp. 72--3]{Billingsley1999}). Separability and completeness are easy to show. Total boundedness is obvious, whence compactness.}
+We equip product spaces with the product topology and the associated Borel $\sigma$-field.
+
+Let $S$ be the basic space of uncertainty. \textcite{BrandenburgerDekel1993} assume that $S$ is Polish. For ease of exposition, further assume that $S$ is totally bounded, hence compact. (We will discuss the topological assumptions later on.)
+
+To avoid notational clutter, assume two players $i$ and $j$. Define $X_0=S$ and $X_n \coloneqq X_{n-1} \times \Delta(X_{n-1})$ for $n \in \N$. We call $\delta_n \in \Delta(X_{n-1})$ an $n$th-order belief. So $\delta_1 \in \Delta(S)$ is a first-order belief, $\delta_2 \in \Delta( S \times \Delta(S) )$ is a second-order belief (joint belief about the state and $j$'s belief about the state), and so on. Write $T_0 \coloneqq \prod_{n=0}^\infty \Delta(X_n)$ for the set of all infinite hierarchies of beliefs $(\delta_1,\delta_2,\dots)$. $T_0$ is compact Polish.%
+	\footnote{Metrisability, separability and compactness are all obvious.}
+
+Consider a hierarchy $(\delta_1,\delta_2,\dots) \in T_0$. The $n$th-order belief for $n \geq 2$ is $\delta_n \in \Delta( X_{n-1} ) = \Delta( X_{n-2} \times \Delta(X_{n-2}) )$, and the $(n-1)$th-order belief is $\delta_{n-1} \in \Delta( X_{n-2} )$. We define the hierarchy in this way in order to allow $i$'s $n$th-order belief to have correlation between $x_{n-2} \in X_{n-2}$ and $j$'s belief about $x_{n-2}$. But it involves redundancy: both $\delta_{n-1}$ and $\delta_n$ specify a marginal belief on $X_{n-2}$ (and so does every higher-order belief). Rationality surely requires that these marginal distributions coincide.
+%
+\begin{definition}
+	%
+	$(\delta_1,\delta_2,\dots) \in T_0$ is coherent iff $\marg_{X_{n-2}} \delta_{n-1} = \delta_n$ for any $n \geq 2$.
+	%
+\end{definition}
+
+
+We're looking for a universal type space $T \subseteq T_0$. As prefaced above, we'd like to choose $T$ so that there is a map $f : T \to \Delta( S \times T )$ between types and beliefs over states and types that meets some criteria. The main criterion is that every type $(\delta_1,\delta_2,\dots) \in T$ maps into a belief $\in \Delta( S \times T )$ whose marginals equal $\delta_1$, $\delta_2$ and so on. We call this property `belief-preservation':
+%
+\begin{definition}
+	%
+	A map $f : T_0 \to \Delta( S \times T_0 )$ is belief-preserving iff for every $n \geq 1$, $\marg_{X_{n-1}} f((\delta_1,\delta_2,\dots)) = \delta_n$.
+	%
+\end{definition}
+%
+\noindent A second criterion is uniqueness: we'd like our $f$ to be the only belief-preserving $f$.
+
+Two further candidates are that $f$ should be one-to-one and onto. But belief-preservation gives us both for free: if $f$ is belief-preserving then its inverse is given explicitly by
+%
+\begin{equation*}
+	f^{-1}(\delta) 
+	= \left( \marg_{X_0} \delta, 
+	\marg_{X_1} \delta, 
+	\marg_{X_2} \delta, \dots \right)
+	\quad \forall \delta \in \Delta( S \times T_0 ) .
+\end{equation*}
+
+
+Since we've given every set a topology, a further (but arguably optional) criterion is for $f$ and its inverse to be continuous, so that it is a homeomorphism. As discussed below, it isn't clear why topology should matter, at least for our intuitive understanding of the universal type space. But conditional on having topological structure, we may agree that continuity is a good thing.
+
+
+Define $T_1 \coloneqq \{ t \in T_0 : \text{$t$ is coherent} \}$. We're going to construct a belief-preserving map $f : T_1 \to \Delta( S \times T_0 )$ that will be unique and a homeomorphism. The first (and main) step is the following.
+%
+\begin{proposition}
+	%
+	\label{proposition:BD93_1}
+	%
+	There is a unique belief-preserving $f : T_1 \to \Delta( S \times T_0 )$, and it is a homeomorphism.
+	%
+\end{proposition}
+
+$f$ has the properties we want: it is belief-preserving, unique and a homeomorphism. But we're not done: $f$ tells us that types of $i$ in $T_1$ can be associated uniquely with beliefs of $i$ about $S$ and $j$'s type in $T_0$. The type spaces are not the same: $i$ does not necessarily rule out that $j$'s type is incoherent. Recall, however, that by a universal type space we mean $T \subseteq T_0$ such that there is an appropriate map from $T$ to $\Delta( S \times T )$. Since $T$ is on both the right- and left-hand sides, the model is `closed': player $i$'s type in $T$ pins down a belief over $S$ and player $j$'s in the \emph{same} $T$, and vice versa.
+
+It turns out to be easy to get this `closedness' property. Define
+%
+\begin{equation*}
+	T_k \coloneqq \{ t \in T_1 : f(t)( S \times T_{k-1} ) = 1 \}
+	\quad\text{for each $k \geq 2$} .
+\end{equation*}
+%
+This imposes higher orders of belief in coherency, e.g. a type in $T_2$ is coherent and believes that her opponent is coherent. $\{ T_k \}$ is a decreasing sequence of compact sets, so $T \coloneqq \Intersect_{k \in \N} T_k$ is nonempty and compact. Intuitively, $T$ is the set of types consistent with `common knowledge' of coherency.
+
+Consider the restriction of $f$ to $T$. It is obviously still belief-preserving, unique, one-to-one, and continuous with a continuous inverse. Some reflection shows that it is also onto $\Delta( S \times T )$. For if $\delta \in \Delta( S \times T )$, then $\delta$ places zero probability on hierarchies that are not consistent with `common knowledge' of coherency. The hierarchy $f^{-1}(\delta)$ that type $\delta$ generates must therefore be consistent with `common knowledge' of coherency, i.e. $f^{-1}(\delta) \in T$ as desired. We have shown:
+%
+\begin{proposition}
+	%
+	\label{proposition:BD93_2}
+	%
+	There is a unique belief-preserving $f : T \to \Delta( S \times T )$, and it is a homeomorphism.
+	%
+\end{proposition}
+%
+\noindent So $T$, the set of hierarchies consistent with `common knowledge' of coherency, is the universal type space that we were after.
+
+
+Let's fill in some of the holes in the argument. A fuller argument can be found in \textcite{BrandenburgerDekel1993}.
+%
+\begin{proof}[Sketch proof of \Cref{proposition:BD93_1}]
+	%
+	Consider $(\delta_1,\delta_2,\dots) \in T_1$, define
+	%
+	\begin{equation*}
+		C_n \coloneqq \left\{ \delta \in \Delta( S \times T_0 ) :
+		\marg_{X_{n-1}} \delta = \delta_n 
+		\right\} ,
+	\end{equation*}
+	%
+	and let $C \coloneqq \Intersect_{n \in \N} C_n$ be the set of beliefs on $S \times T_0$ whose marginals coincide with $(\delta_1,\delta_2,\dots)$. $C$ contains the measures whose value on the cyclinder sets $\{ C_n \}_{n \in \N}$ are pinned down by $(\delta_1,\delta_2,\dots)$. $\{ C_n \}_{n \in \N}$ is a decreasing sequence of nonempty compact sets, so $C$ is nonempty.%
+		\footnote{If we drop compactness, then we instead use Kolmogorov's existence theorem (for stochastic processes) to show that $C$ is nonempty.} 
+	A standard result in measure theory says that $C$ contains at most one element, roughly because the cylinders are a sufficiently rich class of sets that two measures cannot agree on the cylinders and yet disagree elsewhere.%
+		\footnote{The result that a measure is uniquely determined by its value on the cylinders can be viewed as a corollary of Dynkin's $\pi$-$\lambda$ theorem (a much more general result). See e.g. \textcite[][sec. 3]{Billingsley1995}.}
+	So let $f((\delta_1,\delta_2,\dots))$ equal the unique element of $C$.
+
+	The $f : T \to \Delta( S \times T )$ thus constructed is obviously uniquely belief-preserving. As argued above, belief-preservation implies invertibility. To see that $f^{-1}$ is continuous, simply observe that
+	%
+	\begin{equation*}
+		f^{-1}(\delta) 
+		= \left( \marg_{X_0} \delta, 
+		\marg_{X_1} \delta, 
+		\marg_{X_2} \delta, \dots \right)
+		\quad \forall \delta \in \Delta( S \times T_0 ) 
+	\end{equation*}
+	%
+	and that $\marg$ is a continuous operator.%
+		\footnote{Proving that $\marg$ is continuous is trivial.}
+	Continuity of $f$ can be shown using a simple sequential argument that we omit.
+	%
+\end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Varying the topological assumptions}
+\label{sec:belief_hierarchies:varying_topolog}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The construction we just performed involved some assumptions. In particular, we assumed that $S$ has topological structure, and further gave the weak$^\star$ topology to sets of measures and the product topology to product spaces.
+
+The weak$^\star$ topology is arguably a natural choice because it implies that expected utilities are continuous in beliefs.%
+	\footnote{This is obvious from the definition of weak convergence.}
+In some settings, though, it may be important to use a topology that makes the best-reply correspondence continuous. The weak$^\star$ topology does not have this property.
+
+Thse use of the product topology may also be considered natural. When $T$ has the product topology, a sequence of belief hierarchies converges iff every level of the hierarchy converges separately, which seems like an intuitive notion of closeness.%
+	\footnote{Though the uniform topology can be motivated in the same way.}
+But the product topology on $T$ is not always a good choice. Notably, the rationalizability correspondence (for a fixed game) need not be continuous in the product topology.%
+	\footnote{\textcite{DekelFudenbergMorris2006} provide a `strategic' topology on $T$ in which the rationalizability correspondence is continuous. Their topology is finer than the product topology.}
+Some care is needed!
+
+It is possible to construct universal type spaces using different topological assumptions. The best-known constructions are those of \textcite{MertensZamir1985}, who assume that $S$ is compact, and \textcite{BrandenburgerDekel1993}, who assume that $S$ is Polish (but not necessarily totally bounded). \textcite{Heifetz1993} constructs a universal type space assuming only that $S$ is Hausdorff and that beliefs are regular. \textcite[][ch. III]{MertensSorinZamir2015} provide results for a range of topological assumptions.
+
+
+A bigger question is why we used topological structure at all. Intuitively, it seems that the universal type space for a given underlying space of uncertainty $S$ should be a purely measure-theoretic construct: it's about beliefs (measures) and nothing else. But the construction above relied heavily on Kolmogorov's existence theorem, which uses topological structure. In fact, Kolmogorov's existence theorem is false for arbitrary measurable spaces! This raises the question of whether it is possible (using a different method of proof) to construct a universal type space without resort to topology.
+
+The type space $T$ we constructed above (i.e. the set of all belief hierarchies consistent with `common knowledge' of coherency) is not a universal type space when no topological structure is imposed \parencite{HeifetzSamet1999}. However, \textcite{HeifetzSamet1998} show that one can construct a (different) universal type space without making use of topological structure. (They make measurability assumptions, but no topological assumptions.) \textcite{Meier2012} proved that the \textcite{HeifetzSamet1998} universal type space is complete.%
+	\footnote{Completeness was a by-product of how we constructed our universal type space $T$ above, but that is not the case for the \textcite{HeifetzSamet1998} construction.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Extensions}
+\label{sec:belief_hierarchies:extensions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Suppose we are interested in games in extensive form. In that case, we need to think of hierarchies of \emph{conditional} beliefs.%
+	\footnote{If everything is on-path then the conditional probabilities are pinned down by the prior probabilities, so we can use the previous construction. But extensive-form games generally require us to consider probabilities following events of prior measure zero.}
+In particular, each level of the hierarchy will be a regular conditional probability system rather than a single probability measure.%
+	\footnote{The notion of a regular conditional probability is due to \textcite{Renyi1955}, and was brought to economics by \textcite{Myerson1986}. See \textcite[][sec. 1.6]{Myerson1991} for a (brief) textbook treatment.}
+\textcite{BattigalliSiniscalchi1999} construct a universal type space of regular conditional probability systems (for a given $\sigma$-algebra of conditioning events).
+
+Another class of extensions allows for more general notions of `belief'. \textcite{Ahn2007} constructs a complete and universal type space for compact multiple-prior models: $f : T \to K( \Delta( S \times T) )$, where $K(Z)$ denotes the set of all compact subsets of $Z$.
+
+\textcite{EpsteinWang1996} construct a type space in an even more general setting that does not necessarily even involve probabilities. In particular, they construct a $T$ and a well-behaved map $f : T \to P(S \times T)$, where $P(S \times T)$ is the set of all acts. Some restrictions on preferences are of course needed for this to work.%
+	\footnote{In particular, while Ahn's (\citeyear{Ahn2007}) result is a special case `in spirit', his multiple-priors setting is technically ruled out by Epstein and Wang's (\citeyear{EpsteinWang1996}) assumptions.}
+The authors do not show that their $T$ is either universal or complete. \textcite{Chen2010} shows that it is in fact universal and complete (under suitable assumptions), and that some of Epstein and Wang's technical conditions can be dropped.
+
+All of these papers construct spaces of belief hierarchies. Mariotti, Meier and Piccione (\citeyear{MariottiMeierPiccione2005}) show how to construct a space of knowledge hierarchies: in particular, a type space $T$ and a suitable map $f : T \to K( S \times T )$. They show that their $T$ is universal and complete.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Applications}
+\label{sec:belief_hierarchies:applications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textcite{EpsteinPeters1999} provide a canonical class of mechanisms (i.e. a revelation principle) for mechanism design environments with multiple principals.%
+	\footnote{The multiple-principals setting is sometimes called `common agency'.}
+Suppose we have principals $i$ and $j$ offering direct revelation mechanisms to an agent whose type is privately known. Suppose $i$'s mechanism asks the agent to report her type and her report to $j$. If $j$ also offers such a mechanism, then $i$ may be able to gain by using a `second-order' mechanism that asks for the state, her report to $j$ about the state, and her report to $j$ about her report to $i$. To construct a universal space of mechanisms, the authors proceed as we did above, making use of a coherency condition similar to ours. This is interesting, but not obviously useful. Their revelation principle says that we can restrict attention to a certain class of mechanisms, but that class is enormous!
+
+\textcite{Lipman1991} studies decision problems. To decide, the agent first has to decide how to decide, but that in turn requires her to decide how to decide how to decide, and so on. Under some assumptions, it is possible to construct a universal space of decision problems. Like the last paper, this exercise is illuminating, but probably not useful.
+
+There are more useful applications, however! One notable such is \textcite{EpsteinZin1989}, who extend Kreps and Porteus's (\citeyear{KrepsPorteus1978}) work on preferences for the timing of the resolution of uncertainty to an infinite-horizon context. This extension is not so easy, as it turns out. First, an agent has preferences over consumption today and lotteries over consumption streams that resolve tomorrow: $D_1 = \R \times \Delta( \R^\infty )$.%
+	\footnote{I wrote $\R^\infty$ for the space of sequences, but the authors restrict attention to $\ell^p$ spaces.}
+Second, she has preferences over consumption today and lotteries that resolve tomorrow over lotteries that resolve the following day: $D_2 = \R \times \Delta( D_1 )$. Continuing in this fashion, we have a `$t$th-order' choice set $D_t = \R \times \Delta( D_{t-1} )$ in which all uncertainty is resolved in $t$ periods' time. Preferences must be defined over a `universal' choice set that includes all of these possible timings of the resolution of uncertainty. \textcite{EpsteinZin1989} prove the existence of a universal and complete space $D$ and a well-behaved map $f : D \to \R \times \Delta(D)$. Once $D$ has been constructed, the authors extend to preferences defined on $D$ Kreps and Porteus's (\citeyear{KrepsPorteus1978}) axiomatisation of attitudes toward the timing of the resolution of uncertainty, and go on to study the asset-pricing implications of such preferences.
+
+
+
+Another `useful' application is Gül and Pesendorfer's (\citeyear{GulPesendorfer2016}) infinite-horizon extension of their two-period temptation model \parencite{GulPesendorfer2001}. In this problem, preferences are defined over an `infinitely regressing' sequence of spaces for roughly the same reason as in \textcite{EpsteinZin1989}.%
+	\footnote{It isn't exactly the same reason, though: there is no uncertainty in (\citeyear{GulPesendorfer2016}).}
+This again requires the construction of a `universal' space on which preferences can be defined. More generally, any infinite-horizon decision problem in which agents care about things like timing will require preferences to be defined on a space constructed along the lines of the universal type space.
+
+Yet another useful application is Gül and Pesendorfer's (\citeyear{GulPesendorfer2016}) model of interdependent preferences. They define an interdependent-preferences model as a triple $(T,\gamma,\omega)$, where $T$ is the set of types, $\gamma$ maps $T^2$ into preference profiles, and $\omega$ maps $T$ into relevant physical characteristics (e.g. valuations).%
+	\footnote{The fact that $\omega$ is defined on $T$ rather than $T^2$ means that the physical characteristics are not interdependent, thus ruling out settings such as common-values auctions that are not in fact instances of preference interdependence.}
+The fact that $\gamma$ is defined on $T^2$ means that each player's preferences depend on the other player's type. For example, a generous type of a player may be more willing to give if she encounters another generous person. This generates an infinite hierarchy of preferences, so the authors ask the natural question of whether every such infinite hierarchy can be mapped back into a `universal' interdependent-preferences model. The answer turns out to be `no': some interdependent-preferences models cannot be recovered from the preference hierarchies they generate. Interestingly (and controversially), the argue that we should consider only the subset of models for which a universal model exists.
+
+
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Robustness}
+\label{sec:robustness}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+Game-theoretic analysis relies heavily on common knowledge. We might hope that conclusions continue to hold approximately when these common-knowledge assumptions are relaxed slightly. The robustness literature explores this question.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The email game}
+\label{sec:robustness:email_game}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The trouble with interpreting \Cref{theorem:MondererSamet} as a robustness result is that the class of perturbations is very small. Indeed, we can construct examples in which introducing a small amount of incomplete information causes behaviour to change radically. The first such example is Rubinstein's (\citeyear{Rubinstein1989}) email game. (See \textcite[][sec. 5.5]{OsborneRubinstein1994} for a nice exposition.)
+
+\textcite{Rubinstein1989} showed that robustness is not for free. His email game provides an example of a game of complete information and a class of incomplete-information perturbations such that a strict Nash equilibrium of the former is very different from rationalisable behaviour in any of the perturbed games.%
+	\footnote{The exposition here borrows from \textcite[][sec. 5.5]{OsborneRubinstein1994}.}
+
+The email game is a Bayesian game with players $1$ and $2$, both with action set $\{A,B\}$. Payoffs are given by one of the two complete-information games $g_a$ and $g_b$ depicted in \Cref{fig:email_game_payoffs}, where the constants $M$ and $L$ satisfy $L>M>1$.
+%
+\begin{figure}
+	\begin{subfigure}{0.5\textwidth}
+		\begin{equation*}
+			\begin{array}{c|cc}
+					& A		& B		\\ \hline
+				A	& M,M	& 1,-L	\\
+				B	& -L,1	& 0,0	
+			\end{array}
+		\end{equation*}
+		\caption{$g_a$ (probability $1-q$)}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\begin{equation*}
+			\begin{array}{c|cc}
+					& A		& B		\\ \hline
+				A	& 0,0	& 1,-L	\\
+				B	& -L,1	& M,M	
+			\end{array}
+		\end{equation*}
+		\caption{$g_b$ (probability $q$)}
+	\end{subfigure}
+	\caption{Payoffs in the email game. Assume $L>M>1$ and $q<1/2$.}
+	\label{fig:email_game_payoffs}
+\end{figure}
+%
+The common prior is that $g_b$ is played with probability $q<1/2$.
+
+The unique Nash equilibrium of $g_a$ is $(A,A)$. (Indeed $A$ is strictly dominant for each player.) $g_b$ has two strict pure-strategy Nash equilibria: the `safe' $(A,A)$ and the `risky' but Pareto-dominant $(B,B)$. Preview: even when it is `almost' common knowledge that payoffs are given by $g_b$, no type of either player will ever play the risky action $B$, so $(B,B)$ is a not `robust', even though it is a strict Nash equilibrium.
+
+The information structure is as follows. Player 1 learns the payoffs, and player 2 does not. If payoffs are $g_a$ then nothing happens. If payoffs are $g_b$ then player 1 (automatically) sends an email to player 2, which arrives with (high) probability $1-\eps$. If player 2 gets an email from 1, she (automatically) sends an email back to confirm receipt, and this email arrives with probability $1-\eps$. This continues until an email is lost: whenever a player receives an email, she sends a response. (Except for 1's initial email, no-one ever sends an email except as a response.)
+
+To formalise this, let $n_i$ be the number of emails that player $i$ has sent. We can use the state space
+%
+\begin{equation*}
+	\Omega = \left\{ (n_1,n_2) \in \Z_+^2 : \text{$n_1 = n_2$ or $n_1 = n_2 + 1$} \right\} .
+\end{equation*}
+%
+In state $(n,n)$, player 2 received all $n$ of player 1's messages, but her $n$th response got lost. In state $(n,n+1)$, player 1 received all $n$ of player 2's messages, but her $(n+1)$th message got lost. Payoffs are $g_a$ iff the state is $(0,0)$. The states and their probabilities are as depicted in \Cref{fig:email_game_argument}.
+%
+\begin{figure}
+	\begin{gather*}
+		n_2\\n_1
+		\begin{array}{c|ccccccc}
+					& 0			& 1					& 2					& 3					& 4					& \cdots	\\ \hline
+			0		& 1-q		& 					& 					& 					& 					& 			\\
+			1		& q \eps	& q \eps(1-\eps)	& 					& 					& 					& 			\\
+			2		& 			& q \eps(1-\eps)^2	& q \eps(1-\eps)^3	& 					& 					& 			\\
+			3		& 			& 					& q \eps(1-\eps)^4	& q \eps(1-\eps)^5	& 					& 			\\
+			4		& 			& 					& 					& q \eps(1-\eps)^6	& q \eps(1-\eps)^7	& 			\\
+			\vdots	& 			& 					& 					& 					& \ddots			& \ddots
+		\end{array}
+	\end{gather*}
+	\caption{The common prior $\mu$ on the state space $\Omega$ of the email game.}
+	\label{fig:email_game_argument}
+\end{figure}
+%
+Formally, the common prior $\mu$ is given by $\mu(0,0) = 1-q$,
+%
+\begin{equation*}
+	\mu(n+1,n) = q \eps (1-\eps)^{2n} 
+	\quad\text{and}\quad
+	\mu(n+1,n+1) = q \eps (1-\eps)^{2n+1}
+\end{equation*}
+%
+for each $n \in \Z_+$.
+
+
+Players know how many messages they sent, but not whether the other player sent the same number of messages. In the graphical depiction in \Cref{fig:email_game_argument}, player 1 knows the row ($n_1$), and player 2 knows the column ($n_2$). Formally, the information functions are given by $\Pi_1(0,0) = \{0,0\}$,
+%
+\begin{align*}
+	&\Pi_1(n+1,n) = \Pi_1(n+1,n+1) = \{ \{n+1,n\}, \{n+1,n+1\} \} ,
+	\\
+	\text{and}\quad
+	&\Pi_2(n+1,n) = \Pi_2(n,n) = \{ \{n+1,n\}, \{n,n\} \} 
+\end{align*}
+%
+for every $n \in \Z_+$.
+
+A simple argument shows that (for $\eps>0$ sufficiently small,) there is a unique interim rationalisable strategy profile in which every type of each player chooses $A$. Type $n_1=0$ of player 1 knows that payoffs are $g_a$, so must play $A$. Type $n_2=0$ of player 2 therefore knows that player 1 chooses $A$ with probability at least $1-q>1/2$, so must play $A$. Type $n_1=1$ then knows that player 2 chooses $A$ with probability at least $1/(2+\eps)$, so must play $A$. So type $n_2=1$ knows that player 1 chooses $A$ with probability at least $1/(2+\eps)$, so plays $A$. Continuing by induction, we find that rationalisability requires every type of each player to choose $A$.
+
+An iterated deletion argument with this structure is often called an `contagion' (or `infection') argument. The idea originates with \textcite{Rubinstein1989}, and it is at the heart of the robustness and global games literatures. The key ingredient is the existence of `dominance regions' such that some action is never a best reply to beliefs in such a dominance region. General negative robustness results often rely on showing the existence of dominance regions, then applying a contagion argument. A common way to obtain dominance regions is to assume `payoff richness', meaning that the class of perturbations is sufficiently large that it contains games in which some actions are dominated for some types.
+
+
+In the complete-information game $g_b$, payoffs are common knowledge, and $(B,B)$ is a strict Nash equilibrium. In the email game, when payoffs are $g_b$, payoffs are `almost' common knowledge, and yet $B$ is never played. The sense in which payoffs are almost common knowledge is straightforward: conditional on payoffs being given by $g_b$, both players know that payoffs are $g_b$ with high probability $1-\eps$, players know that the other player knows that payoffs are $g_b$ with high probability $1 - \eps \left[ 1 + (1-\eps) + (1-\eps)^2 \right]$, and so on.
+
+A more formal sense in which payoffs are almost common knowledge is that as $\eps \conv 0$, the players' types converge in the the product topology on the universal type space to a common-knowledge-of-payoffs pair of types. Convergence in the product topology simply means that for each $k \in \N$, $k$th order beliefs converge (separately). So we are taking `almost common knowledge' to mean `close in the product topology to common knowledge'. The fact that there is a sequence of perturbations along which $B$ may not be played, but which converges to a game in which $B$ may be played, is precisely a failure of hemicontinuity in the product topology of the correspondence from types to behaviour.
+
+
+\textcite{Rubinstein1989} considers the non-robustness of a strict Nash equilibrium in the email game a paradox, or at least a problem. He thinks that $(B,B)$ is a perfectly sensible prediction for $g_b$ even if we imagine that players are slightly unsure about payoffs. (The story is, roughly speaking, that real people don't use mathematical induction when reasoning strategically.) The (cheap) way to get around this is to simply rule out these kinds of perturbations. A more principled reponse is to argue that precisely because of email-game-type pathologies, the product topology provides the wrong notion of closeness of types. \textcite{DekelFudenbergMorris2006} develop a topology on the universal type space under which the correspondence from types to rationalisable behaviour is lower hemicontinuous.%
+	\footnote{In particular, their `strategic topology' is the coarsest topology with this property.}
+
+
+The subsequent literature has instead tended to view the non-robustness of certain strict Nash equilibria to incomplete-information perturbations as good news. The refinements literature of the 1980s may allow us to refine away some Nash equilibria, but it is mostly silent on the question of how to select between multiple strict Nash equilibria.%
+	\footnote{For example, the Kohlberg--Mertens (\citeyear{KohlbergMertens1986}) stable set contains every strict Nash equilibrium.}
+By contrast, the email game shows that robustness to incomplete information is a refinement that may eliminate strict Nash equilibria. The global games literature, starting with \textcite{CarlssonVandamme1993}, is concerned with refinements of this sort.%
+	\footnote{The strange term `global game' comes from \textcite{CarlssonVandamme1993}.}
+
+
+% This simply means that when we consider perturbations that are small in the product topology on the universal type space, robustness need not obtain. This does not contradict the theorem of \textcite{MondererSamet1989} because they consider a much smaller class of perturbations that requires the payoffs to be common $p$-belief with high probability, whereas we are requiring only that payoffs are $p$-belief with high probability. The view in the literature seems to be that perturbations such as the one in the email game are perfectly reasonable, whence it follows that restricting attention to perturbations in which payoffs remain approximate common knowledge is unreasonably restrictive.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Common \texorpdfstring{$p$}{p}-belief}
+\label{sec:robustness:common_p-belief}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The robustness literature can be viewed as an extended response to the email game. The goal is to understand when and why our predictions in complete-information games break down when common knowledge is relaxed slightly.
+
+The email game appeared to have almost common knowledge of payoffs. But it turned out that the information structure was not `close enough' to common knowledge to guarantee behaviour close to behaviour under common knowledge. This raises the question of whether there is a weakening of common knowledge that rules out such failures of lower hemicontinuity. \textcite{MondererSamet1989} answer this question in the affirmative: their notion of common $p$-belief has this property.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\texorpdfstring{$p$}{p}-belief}
+\label{sec:robustness:common_p-belief:p_belief}
+
+Consider again the model of knowledge from \cref{sec:belief_hierarchies:K_and_CK} (p. \pageref{sec:belief_hierarchies:K_and_CK}): a set of states $\Omega$ equipped with a $\sigma$-algebra $\Sigma$, and maps $\Pi_i : \Omega \to \Sigma$ for each player $i$ such that $\Pi_i(\Omega)$ partitions $\Omega$. The knowledge operator $K_i : \Sigma \to \Sigma$ is defined
+%
+\begin{equation*}
+	K_i(E) \coloneqq \left\{ \omega \in \Omega : \Pi_i(\omega) \subseteq E \right\} 
+	\quad \forall E \in \Sigma .
+\end{equation*}
+
+
+Now add to the model a belief for each agent, i.e. a probability measure $\mu_i$ on $(\Omega,\Sigma)$ for each $i \in I$. Assume that each agent $i$'s prior $\mu_i$ assigns positive measure to each cell of every agent $j$'s partition $\Pi_j(\Omega)$ of $\Omega$, so that conditional probabilities are unique.%
+	\footnote{The results below (most of which are from \textcite{MondererSamet1989}) can be extended to the case in which some partition cells have measure zero, but it is somewhat delicate since conditional probabilities are no longer unique. See \textcite{KajiiMorris1997geb}.}
+(Note that this implies that the partitions are countable.) For $p \in [0,1]$, define $B^p_i : \Sigma \to \Sigma$ by
+%
+\begin{equation*}
+	B^p_i(E) \coloneqq \left\{ \omega \in \Omega : 
+	\mu_i\left( E | \Pi_i(\omega) \right) \geq p \right\} 
+	\quad \forall E \in \Sigma
+\end{equation*}
+%
+$B^p_i(E)$ is the event that $i$ believes $E$ with probability at least $p$; we say that `$i$ $p$-believes $E$.
+
+$B^1_i(E)$ and $K_i(E)$ do not coincide when there are null sets. In particular, while $K_i$ satisfies $K_i(E) \subseteq E$ (the `axiom of truth'), $B^1_i(E)$ does not imply that $E$ obtains. (Think of Lebesgue measure on $[0,1]$.) But they do coincide whenever $\Omega$ is countable. This is the only important thing that changes when $\Omega$ is allowed to be uncountable; we will therefore assume $\Omega$ countable (and that $\Sigma = 2^\Omega$) to make our lives easier.
+
+$B^p_i$ has the following easily-derived properties.
+%
+\begin{proposition}
+	%
+	\label{proposition:MS_Bp_properties}
+	%
+	For any $p,q \in [0,1]$ and $E,F \in \Sigma$,
+	%
+	\begin{enumerate}
+
+		\item $B_i^p \left( B_i^p \left( E \right) \right) = B_i^p( E )$.%
+			\footnote{This can be strengthened to `if $q \geq p$ then $B_i^q \left( B_i^p \left( E \right) \right) = B_i^p( E )$'.}
+
+		\item If $p > q$ then $B_i^p(E) \subseteq B_i^q(E)$.
+
+		\item If $E \subseteq F$ then $B^p_i(E) \subseteq B^p_i(F)$.
+
+		\item $B^p_i( E \intersect F ) \subseteq B^p_i(E) \intersect B^p_i(F)$, with equality  if $E \subseteq F$.%
+			\footnote{This can be strengthened to $B^p_i\left( \Intersect_{n \in \N} E_n \right) = \Intersect_{n \in \N} B^p_i(E_n)$ if $E_n \subseteq E_{n-1}$ $\forall n \in \N$.}
+
+		\item $B^p_i(E)$ is a union of the cells of the partition $\Pi_i(\Omega)$.
+
+	\end{enumerate}
+	%
+\end{proposition}
+
+With the exception of (2), $K_i$ satisfies all of these properties. But $K_i$ satisfies property (4) with equality even when $E$ and $F$ are not nested, whereas $B^p_i$ does not. To see why, suppose that $E$ and $F$ are disjoint, that each occurs with probability $1/2$, and that $p=1/3$. Then $B^p_i( E \intersect F ) = \varnothing$, but $B_i^p(E) \intersect B_i^p(F) = \Omega \intersect \Omega = \Omega$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Common \texorpdfstring{$p$}{p}-belief}
+\label{sec:robustness:common_p-belief:common_p_belief}
+
+When we talk about multiple agents, it becomes important that they do not assign probability zero to different events. So assume that they do not, i.e. that $\{ \mu_i \}$ are mutually absolutely continuous.%
+	\footnote{This imposes some degree of agreement among agents. We might argue that it is a weak restriction when $\Omega$ is countable, since each singleton can then be assigned (possibly very small) positive probability by every player. But for $\Omega$ uncountable, there's no getting around the fact that mutual absolute continuity of priors is a strong assumption. (Though not as strong as assuming a common prior, obviously.)}
+It is then wlog to assume that the priors have full support on $\Omega$ (just throw away any zero-probability states), so let's do that. To lighten the notational burden, assume two players $i$ and $j$.
+
+Recall how we defined common knowledge in \cref{sec:belief_hierarchies:K_and_CK} (p. \pageref{sec:belief_hierarchies:K_and_CK}). Our primary definition was iterative: for any event $E \in \Sigma$, define $E_0 \coloneqq E$, $E_n \coloneqq K_i(E_{n-1}) \intersect K_j(E_{n-1})$ for each $n \in \N$, and $C(E) \coloneqq \Intersect_{n \in \N} E_n$; we say that $E \in \Sigma$ is common knowledge at $\omega \in \Omega$ iff $\omega \in C(E)$. We also gave an equivalent definition due to Aumann: $E \in \Sigma$ is common knowledge at $\omega \in \Omega$ iff there is a self-evident set $F \in \Sigma$ such that $\omega \in F \subseteq E$, where a set $F \in \Sigma$ is self-evident iff $K_i(F) \supseteq F$ for every and $i \in I$.
+
+Common $p$-belief is defined analogusly to common knowledge: for any event $E \in \Sigma$, define $E_0 \coloneqq E$,
+%
+\begin{equation*}
+	E_n \coloneqq B^p_i(E_{n-1}) \intersect B^p_j(E_{n-1})
+	\quad\text{for each $n \in \N$} ,
+\end{equation*}
+%
+and $C^p(E) \coloneqq \Intersect_{n \in \N} E_n$, and say that $E \in \Sigma$ is common $p$-belief at $\omega \in \Omega$ iff $\omega \in C^p(E)$.
+
+A nice feature of this concept is that it has a nice Aumann-style `fixed-point' characterisation. Call a set $F \in \Sigma$ $p$-evident at $\omega \in \Omega$ iff $B^p_i(F) \supseteq F$ for each player $i \in I$.
+%
+\begin{proposition}
+	%
+	\label{proposition:MS_Cp_iterative_fp}
+	%
+	$\omega \in C^p(E)$ iff there is a $p$-evident set $F \in \Sigma$ such that $\omega \in F \subseteq B^p_i(E)$.
+	%
+\end{proposition}
+%
+\noindent The proof is straightforward: see \textcite[][p. 177--8]{MondererSamet1989}.
+
+
+\textcite{Morris1999} considers various alternative `iterative' (he calls them `hierarchical') definitions of approximate common knowledge; we'll look at one of them. Define $I^p : \Sigma \to \Sigma$ by
+%
+\begin{multline*}
+	I^p(E)
+	\coloneqq \left[ B^p_i(E) 
+	\intersect B^p_i \left( B^p_j \left( E \right) \right)
+	\intersect B^p_i \left( B^p_j \left( B^p_i \left( E \right) \right) \right) 
+	\intersect \cdots \right]
+	\\
+	\intersect
+	\left[ B^p_j(E) 
+	\intersect B^p_j \left( B^p_i \left( E \right) \right)
+	\intersect B^p_j \left( B^p_i \left( B^p_j \left( E \right) \right) \right) 
+	\intersect \cdots \right] 
+	%\quad\text{for every $E \in \Sigma$} ,
+\end{multline*}
+%
+for every $E \in \Sigma$. Say that $E \in \Sigma$ is iterated $p$-belief at $\omega \in \Omega$ iff $\omega \in I^p(E)$. (The difference is in the order of intersection.) For $p=1$, common and iterated $p$-belief coincide.%
+	\footnote{This follows from the fact that property (4) in \Cref{proposition:MS_Bp_properties} (p. \pageref{proposition:MS_Bp_properties}) holds with equality when $p=1$. It follows that the two notions also coincide when $B^p_i$ and $B^p_j$ are replaced with $K_i$ and $K_j$.}
+For $p<1$, it's easy to show that $C^p \subseteq I^p$ (see \textcite[][Lemma 14]{Morris1999}). But the containment may be strict in general, as the following example from \textcite{Morris1999} demonstrates.
+%
+\begin{example}
+	%
+	Consider $\Omega = \{1,2,3,4,5,6\}$, the partitions
+	%
+	\begin{align*}
+		\Pi_i(\Omega) ={}& \{ \{1,2\}, \{3\}, \{4\}, \{5,6\} \}
+		\\
+		\Pi_j(\Omega) ={}& \{ \{ 1,3,4 \}, \{ 2,5,6 \} \} ,
+	\end{align*}
+	%
+	and the uniform common prior $\mu_i(F) = \mu_j(F) = \abs*{F}/6$ for each $F \subseteq \Omega$. Let $p=0.6$ and $E = \{1,2,3\}$. We're going to show that $C^p=\varnothing$ and $I^p=\{3\}$, so that the containment $C^p \subseteq I^p$ is strict in this case.
+
+	$B^p_i(E) = \{1,2,3\}$ and $B^p_j(E) = \{1,3,4\}$, so
+	%
+	\begin{equation*}
+		E_1 = B^p_i(E) \intersect B^p_j(E) = \{1,3\} .
+	\end{equation*}
+	%
+	Then $B^p_i(E_1) = \{3\}$ and $B^p_j(E_1) = \{1,3,4\}$, so
+	%
+	\begin{equation*}
+		E_2 = B^p_i(E_1) \intersect B^p_j(E_1) = \{3\} .
+	\end{equation*}
+	%
+	$B^p_i(E_2) = \{3\}$ and $B^p_j(E_2) = \varnothing$, so
+	%
+	\begin{equation*}
+		E_3 = B^p_i(E_2) \intersect B^p_j(E_2) = \varnothing .
+	\end{equation*}
+	%
+	Hence $C^p(E) = \Intersect_{n \in \N} E_n = \varnothing$.
+
+	Again $B^p_i(E) = \{1,2,3\}$ and $B^p_j(E) = \{1,3,4\}$. Hence
+	%
+	\begin{align*}
+		B^p_i \bigl( B^p_j(E) \bigr) ={}& B^p_i( \{1,3,4\} ) = \{3,4\}
+		\\\text{and}\quad
+		B^p_j ( B^p_i(E) ) ={}& B^p_j( \{1,2,3\} ) = \{1,3,4\} .
+	\end{align*}
+	%
+	So
+	%
+	\begin{align*}
+		B^p_i \bigl( B^p_j ( B^p_i(E) ) \bigr) ={}& B^p_i( \{1,3,4\} ) = \{3,4\}
+		\\\text{and}\quad
+		B^p_j \bigl( B^p_i \bigl( B^p_j(E) \bigr) \bigr) ={}& B^p_j( \{3,4\} ) = \{1,3,4\} .
+	\end{align*}
+	%
+	Spot the pattern? We therefore have
+	%
+	\begin{multline*}
+		B^p_i(E) 
+		\intersect B^p_i \left( B^p_j \left( E \right) \right)
+		\intersect B^p_i \left( B^p_j \left( B^p_i \left( E \right) \right) \right) 
+		\intersect \cdots 
+		\\
+		= \{1,2,3\} 
+		\intersect \{3,4\}
+		\intersect \{3,4\}
+		\intersect \{3,4\} 
+		\intersect \cdots 
+		= \{3\} ,
+	\end{multline*}
+	%
+	and
+	%
+	\begin{multline*}
+		B^p_j(E) 
+		\intersect B^p_j \left( B^p_i \left( E \right) \right)
+		\intersect B^p_j \left( B^p_i \left( B^p_j \left( E \right) \right) \right) 
+		\intersect \cdots 
+		\\
+		= \{1,3,4\}
+		\intersect \{1,3,4\}
+		\intersect \{1,3,4\}
+		\intersect \{1,3,4\}
+		\intersect \cdots 
+		= \{1,3,4\} .
+	\end{multline*}
+	%
+	Hence $I^p(E) = \{3\} \intersect \{1,3,4\} = \{3\}$.
+	%
+\end{example}
+
+
+\textcite{Morris1999} argues that $I^p$ is the correct notion of approximate knowledge for some questions (and there are papers that use it). But as we'll see in a moment (\cref{sec:robustness:common_p-belief:close_to_CK}), $C^p$ is the right concept for our purposes (viz. lower hemicontinuity).
+
+
+Before moving on, let's see what common $p$-belief has to say about the email game from \cref{sec:robustness:email_game} (p. \pageref{sec:robustness:email_game}), the essentials of which are replicated in \Cref{fig:email_game_recap}.
+%
+\begin{figure}
+	\begin{subfigure}{0.5\textwidth}
+		\begin{equation*}
+			\begin{array}{c|cc}
+					& A		& B		\\ \hline
+				A	& M,M	& 1,-L	\\
+				B	& -L,1	& 0,0	
+			\end{array}
+		\end{equation*}
+		\caption{$g_a$ (probability $1-q$)}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\begin{equation*}
+			\begin{array}{c|cc}
+					& A		& B		\\ \hline
+				A	& 0,0	& 1,-L	\\
+				B	& -L,1	& M,M	
+			\end{array}
+		\end{equation*}
+		\caption{$g_b$ (probability $q$)}
+	\end{subfigure}
+	\\
+	\begin{subfigure}{\textwidth}
+		\begin{gather*}
+			n_2\\n_1
+			\begin{array}{c|ccccccc}
+						& 0			& 1					& 2					& 3					& 4					& \cdots	\\ \hline
+				0		& 1-q		& 					& 					& 					& 					& 			\\
+				1		& q \eps	& q \eps(1-\eps)	& 					& 					& 					& 			\\
+				2		& 			& q \eps(1-\eps)^2	& q \eps(1-\eps)^3	& 					& 					& 			\\
+				3		& 			& 					& q \eps(1-\eps)^4	& q \eps(1-\eps)^5	& 					& 			\\
+				4		& 			& 					& 					& q \eps(1-\eps)^6	& q \eps(1-\eps)^7	& 			\\
+				\vdots	& 			& 					& 					& 					& \ddots			& \ddots
+			\end{array}
+		\end{gather*}
+		\caption{The common prior on the state space.}
+	\end{subfigure}
+	\caption{The email game again. Payoffs are $g_a$ if the state is $(0,0)$ and $g_b$ otherwise. $\eps$ is small, $L>M>1$ and $q<1/2$.}
+	\label{fig:email_game_recap}
+\end{figure}
+%
+Take any $p>1/2$ and $\eps>0$ small,%
+	\footnote{For the argument to follow, a small $p$ will require a smaller $\eps$.}
+and consider the event $E \coloneqq \Omega \backslash \{ (0,0) \}$ that payoffs are given by $g_b$ rather than $g_a$. Since player 1 knows the payoffs,
+%
+\begin{equation*}
+	B^p_1(E) = \Omega \backslash \{ (0,0) \} = E .
+\end{equation*}
+%
+Every $n_2>0$ knows $E$ when it occurs, but $n_2=0$ believes it only with with probability $q\eps/(1-q+q\eps)$ when it occurs. Since $q$ and $p$ are $>1/2$ and $\eps$ is small, $n_2=0$ does not $p$-believe $E$, so
+%
+\begin{equation*}
+	B^p_2(E)
+	= E \backslash \{(1,0)\} .
+\end{equation*}
+%
+Hence
+%
+\begin{equation*}
+	E_1 \coloneqq B^p_1(E) \intersect B^p_2(E) 
+	= E \backslash \{(1,0)\} 
+	= \Omega \backslash \{(0,0),(1,0)\} .
+\end{equation*}
+%
+Player $2$ knows $E_1$ whenever it occurs, and types $n_1 \geq 2$ of player 1 do as well. But type $n_1=1$ of player 1 believes $E_1$ with probability $1/(2-\eps) < p$ (using the fact that $\eps$ is small). Hence
+%
+\begin{equation*}
+	E_2 \coloneqq B^p_1(E_1) \intersect B^p_2(E_1) 
+	= E_1 \backslash \{(1,1)\}
+	= \Omega \backslash \{(0,0),(1,0),(1,1)\} .
+\end{equation*}
+%
+Continuing inductively, one more state is eliminated in each round. It follows that
+%
+\begin{equation*}
+	C^p(E) = \Intersect_{n \in \N} E_n = \varnothing .
+\end{equation*}
+
+
+So in the email game, there is no state at which payoffs are common $p$-belief for $p>1/2$. This shows that common $p$-belief (for $p$ reasonably large) is sometimes a lot stronger than types being close to common-knowledge-of-payoffs types in the product topology. In a word, common $p$-belief is a demanding condition.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Play under common \texorpdfstring{$p$}{p}-belief is close to play under CK}
+\label{sec:robustness:common_p-belief:close_to_CK}
+
+We are interested in $C^p$ because it is supposed to yield similar behaviour to $C$ in games. The formal results establishing this are from section 5 of \textcite{MondererSamet1989}. We'll just sketch the general idea.
+
+The setup is as follows. Players in a set $I$ with action spaces $\{ A_i \}_{i \in I}$ are uncertain about what game they are playing. Formally, there is a measurable space $(\Omega,\Sigma)$ of uncertainty, and payoffs are a random element $G : \Omega \to \mathcal{G}$, where $\mathcal{G}$ is a finite set of complete-information games (with typical element $g$). Players have information functions $\Pi_i : \Omega \to \Sigma$ and priors $\mu_i$ on $(\Omega,\Sigma)$. Putting these ingredients to together gives us a Bayesian game:
+%
+\begin{equation*}
+	\gamma \coloneqq \left(
+	I, \{ A_i \}_{i \in I}, \mathcal{G}, G, (\Omega,\Sigma), \{\Pi_i,\mu_i\}_{i \in I}
+	\right) .
+\end{equation*}
+
+
+\begin{theorem}[\textcite{MondererSamet1989}]
+	%
+	\label{theorem:MondererSamet}
+	%
+	Take any Bayesian game
+	%
+	\begin{equation*}
+		\gamma = \left(
+		I, \{ A_i \}_{i \in I}, \mathcal{G}, G, (\Omega,\Sigma), \{\Pi_i,\mu_i\}_{i \in I}
+		\right) 
+	\end{equation*}
+	%
+	such that $\mathcal{G}$ is finite and every partition cell of every player has positive probability under each prior,%
+		\footnote{Formally, every set in $\Union_{i \in I} \Pi_i(\Omega) \subseteq \Sigma$ has positive $\mu_i$-measure for each $i \in I$.}
+	and any collection of Nash equilibria $\{ \sigma^g \}_{g \in \mathcal{G}}$. 
+	If for some $g \in \mathcal{G}$, $C^p( G^{-1}(g) )$ for $p$ sufficiently large has sufficiently high probability according to each player's prior, then there is a nearly-Bayes--Nash equilibrium of $\gamma$ that nearly always yields the same play and payoffs as $\sigma^G$.%
+		\footnote{Note that $\sigma^G$ is random since $G$ is.}
+	%
+\end{theorem}
+
+
+In brief, common $p$-belief of payoffs for $p$ large with high probability is enough for robustness. On the other hand, common $p$-belief of payoffs for $p$ large with high probability tends to fail when robustness does: for example, we saw in the previous section that in the email game, payoffs are common $p$-belief for $p>1/2$ with probability zero.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Perturbations that preserve common \texorpdfstring{$p$}{p}-belief}
+\label{sec:robustness:common_p-belief:perturbations_that_preserve}
+
+When studying robustness, we wish to consider a class of perturbations of players' information about payoffs that are `small' in some sense. We have now seen that if we take `small deviation from common knowledge of payoffs' to mean `common $p$-belief in payoffs for $p$ large with high probability' then robustness is free.
+
+Arguably, this is not a natural (or `primitive') notion of smallness. More importantly, we already know that it rules out certain perturbations that we want to allow for in our study of robustness, namely the perturbations of $g_b$ in the email game. These perturbations are what motivated the robustness question in the first place: they seem small, and we want to know whether and when they will cause trouble as they do in the email game.
+
+A more primitive notion of `smallness' of a perturbation of a game in which payoffs are commonly known to be $g$ is to require that players $p$-believe for $p$ large with high probability that payoffs are $g$. That is, we require first-order beliefs about payoffs to be close to what they are in the complete-information game $g$, but leave higher orders of belief unrestricted.
+
+Suppose we consider the class of all perturbations that are `first-order small' in this sense. When, if ever, do we get the more stringent `common-$p$-belief smallness' (and hence play close to CK play) for free? This section provides three sets of conditions.
+
+The first result is a trivial observation: when players' types are independent, mutual $p$-belief with high probability implies common $p$-belief with high probability.
+
+The second result relies on a finite state space. A proof (and some related results and discussion) can be found in \textcite[][sec. 14.4]{FudenbergTirole1991}.
+%
+\begin{proposition}
+	%
+	\label{proposition:MS_Cp_properties_finite}
+	%
+	If $\Omega$ is finite, then for any sequence $\{ \mu_n \}$ of common priors in $\Delta(\Omega)$ such that $\mu_n(E) \conv 1$, there are sequences $\{ q_n \}$ and $\{ r_n \}$ in $[0,1]$ converging to $1$ such that $\mu_n\left( C^{q_n}(E) \right) \geq r_n$ for every $n \in \N$.
+	%
+\end{proposition}
+%
+\noindent In words, if $E$ is highly likely according to the common prior, then it is highly likely to be common $p$-belief for $p$ large.
+
+
+The third result allows the state space to be countably infinite, but requires $p < 1/2$. It is a slight specialisation of Proposition 4.2 in \textcite{KajiiMorris1997ecta}. A proof can be found in their appendix.
+%
+\begin{theorem}[critical path result]
+	%
+	\label{theorem:MS_Cp_properties_1/2}
+	%
+	Fix $p \in [ 0, 1 / \abs*{I} )$, and assume $\Omega$ countable and a common prior $\mu$. Then for any event $E \in \Sigma$ that is the intersection of unions of players' partition cells (a `simple' event), 
+	%
+	\begin{equation*}
+		\mu( C^p(E) ) \geq 1 - (1 - \mu(E)) \frac{ 1-p }{ 1 - \abs*{I} p } .%
+			\footnote{Corollary 4.3 in the paper provides a slightly weaker bound for non-simple $E$.}
+	\end{equation*}
+	%
+\end{theorem}
+
+The crucial corollary is that for fixed $p$, $\mu\left( C^p(E) \right) \conv 1$ as $\mu(E) \conv 1$. So if $E$ is highly likely according to the common prior, then it is highly likely to be common $p$-belief for $p$ large-ish.
+
+
+The first two results are arguably uninteresting for studying robustness. After all, assuming that types are independent or that there are finitely many states are tacit ways of restricting the information structure. If we're serious about robustness, we should allow for a richer class of perturbations than these conditions permit. The critical path result holds more promise for robustness. In \cref{sec:robustness:KajiiMorris:p_dominant} (p. \pageref{sec:robustness:KajiiMorris:p_dominant}), we'll see how it can be chained together with a result along the lines of \Cref{theorem:MondererSamet} (p. \pageref{theorem:MondererSamet}) to prove a positive result about robustness.
+
+An aside: while the first two sets of conditions extend straightforwardly to the case of mutually continuous priors, the critical path result breaks down completely without a common prior. Kajii--Morris robustness (as studied \cref{sec:robustness:KajiiMorris:p_dominant} below) is therefore extremely demanding in settings without a common prior---see \textcite{OyamaTercieux2010}.
+
+
+The email game provides a nice way to explore the boundaries of these results. Finiteness of $\Omega$ is evidently essential for \Cref{proposition:MS_Cp_properties_finite}: as soon as the state space is allowed to be countably infinite, pathologies such as the email game become possible. Recall that we showed in \cref{sec:robustness:common_p-belief} that for $p > 1/2$, it is not common $p$-belief at any state that payoffs are $g_b$. The critical path result tells us that $p \geq 1/2$ is essential for such a result: if $p<1/2$, then for any two-player game (including the email game), a highly likely event must be commonly $p$-believed with high probability.
+
+The email game (replicated in \Cref{fig:email_game_recapcap}) also provides some intuition for the shape of the bound in the critical path result.
+%
+\begin{figure}
+	\begin{subfigure}{0.5\textwidth}
+		\begin{equation*}
+			\begin{array}{c|cc}
+					& A		& B		\\ \hline
+				A	& M,M	& 1,-L	\\
+				B	& -L,1	& 0,0	
+			\end{array}
+		\end{equation*}
+		\caption{$g_a$ (probability $1-q$)}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\begin{equation*}
+			\begin{array}{c|cc}
+					& A		& B		\\ \hline
+				A	& 0,0	& 1,-L	\\
+				B	& -L,1	& M,M	
+			\end{array}
+		\end{equation*}
+		\caption{$g_b$ (probability $q$)}
+	\end{subfigure}
+	\\
+	\begin{subfigure}{\textwidth}
+		\begin{gather*}
+			n_2\\n_1
+			\begin{array}{c|ccccccc}
+						& 0			& 1					& 2					& 3					& 4					& \cdots	\\ \hline
+				0		& 1-q		& 					& 					& 					& 					& 			\\
+				1		& q \eps	& q \eps(1-\eps)	& 					& 					& 					& 			\\
+				2		& 			& q \eps(1-\eps)^2	& q \eps(1-\eps)^3	& 					& 					& 			\\
+				3		& 			& 					& q \eps(1-\eps)^4	& q \eps(1-\eps)^5	& 					& 			\\
+				4		& 			& 					& 					& q \eps(1-\eps)^6	& q \eps(1-\eps)^7	& 			\\
+				\vdots	& 			& 					& 					& 					& \ddots			& \ddots
+			\end{array}
+		\end{gather*}
+		\caption{The common prior on the state space.}
+	\end{subfigure}
+	\caption{The email game again. Payoffs are $g_a$ if the state is $(0,0)$ and $g_b$ otherwise. $\eps$ is small, $L>M>1$ and $q<1/2$.}
+	\label{fig:email_game_recapcap}
+\end{figure}
+%
+Consider again the (clearly simple) event $E = \Omega \backslash \{(0,0)\}$ that payoffs are given by $g_b$ rather than $g_a$, and fix some $p \in [0,1]$. For convenience, relabel the states according to the order in which we kicked them out in the contagion argument:
+%
+\begin{equation*}
+	\omega_0 \coloneqq (0,0) , \quad
+	\omega_1 \coloneqq (1,0) , \quad
+	\omega_2 \coloneqq (1,1) , \quad
+	\omega_3 \coloneqq (2,1) , \quad
+	\omega_4 \coloneqq (2,2) , \quad
+	\dots
+\end{equation*}
+%
+By the contagion logic from before, having kicked out states $\omega_0,\dots,\omega_{n-1}$, we kick out state $\omega_n$ iff $\mu(\omega_n) / [ \mu(\omega_n) + \mu(\omega_{n-1}) ] < p$, which rearranges to
+%
+\begin{equation*}
+	\mu(\omega_n) 
+	< \frac{p}{1-p} \mu(\omega_{n-1})
+	< \left(\frac{p}{1-p}\right)^{n-1} \mu(\omega_0)
+	\quad\text{for each $n \in \N$} .
+\end{equation*}
+
+
+When we analysed the email game in \cref{sec:robustness:email_game}, we assumed $p>1/2$ and that $\eps$ was sufficiently small given $p$; the contagion argument then knocked out every state. Without these assumptions, the contagion may stop. Suppose that there are at most $N$ rounds of contagion; then we know that $\omega_{N+1},\omega_{N+2},\dots$ are in $C^p(E)$, so
+%
+\begin{align*}
+	\mu(C^p(E))
+	\geq{}& \sum_{n=N+1}^\infty \mu(\omega_n)
+	\\
+	={}& 1 - \sum_{n=1}^N \mu(\omega_n)
+	\\
+	>{}& 1 - \sum_{n=1}^N \left(\frac{p}{1-p}\right)^{n-1} \mu(\omega_0)
+	\\	
+	={}& 1 - \mu(\omega_0) \sum_{n=0}^{N-1} \left(\frac{p}{1-p}\right)^n 
+	\\	
+	={}& 1 - (1-\mu(E)) \sum_{n=0}^{N-1} \left(\frac{p}{1-p}\right)^n .
+\end{align*}
+%
+For $N$ large, if $p \geq 1/2$ then this bound becomes negative, so take $p < 1/2$. Then we have a bound independent of the number of rounds of contagion:
+%
+\begin{align*}
+	\mu(C^p(E))
+	\geq{}& 1 - (1-\mu(E)) \sum_{n=0}^\infty \left(\frac{p}{1-p}\right)^n 
+	\\
+	={}& 1 - (1-\mu(E)) \frac{1-p}{1-2p} .
+\end{align*}
+
+This is the bound in the critical path result (for $\abs*{I}=2$). The critical path result is derived by showing that (a generalised version of) the email game's `contagion' information structure is the worst case for $\mu(C^p(E))$. (The proof is quite long and involved.)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\texorpdfstring{\textcite{KajiiMorris1997ecta}}{Kajii and Morris (1997)}}
+\label{sec:robustness:KajiiMorris}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The email game provides a negative result about robustness: strict Nash equilibria need not be robust. Perhaps the best-known positive robustness results are those of \textcite{KajiiMorris1997ecta}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Setting}
+\label{sec:robustness:KajiiMorris:setting}
+
+The setup is similar to that in \cref{sec:robustness:common_p-belief:close_to_CK} (p. \pageref{sec:robustness:common_p-belief:close_to_CK}): players in a set $I$, action spaces $\{ A_i \}_{i \in I}$, a set $\mathcal{G}$ of complete-information games, a measurable space of uncertainty $(\Omega,\Sigma)$, random payoffs $G : \Omega \to \mathcal{G}$, information functions $\Pi_i : \Omega \to \Sigma$, and priors $\mu_i$ on $(\Omega,\Sigma)$. Together, these ingredients make up a Bayesian game:
+%
+\begin{equation*}
+	\gamma \coloneqq \left(
+	I, \{ A_i \}_{i \in I}, \mathcal{G}, G, (\Omega,\Sigma), \{\Pi_i,\mu_i\}_{i \in I}
+	\right) .
+\end{equation*}
+%
+Write $u_i : A \times \mathcal{G} \to \R$ for player $i$'s payoff function.
+
+Assume a common prior $\mu$ and that the state space $\Omega$ is countable. It is then wlog to let $\mu$ have full support, so that conditional probabilities are unique. It is uniqueness of conditional probabilites we're after---we ought to be able to recover all the results (modulo measure-theoretic issues) with $\Omega$ uncountable. By contrast, the common-prior assumption is crucial.
+
+On the other hand, we no longer need to consider only a finite set $\mathcal{G}$ of games. On the contrary, we will consider a very rich (definitely uncountable) class of perturbations of the complete-information game $g$ for which we wish to make robust predictions.
+
+An action distribution $\nu \in \Delta(A)$ is an $\eta$-correlated equilibrium of a complete-information game $g$ iff
+%
+\begin{equation*}
+	\sum_{(a_i,a_{-i}) \in A} u_i(a_i,a_{-i},g) \nu(a_i,a_{-i})
+	\geq \sum_{(a_i,a_{-i}) \in A} u_i(\phi(a_i),a_{-i},g) \nu(a_i,a_{-i}) - \eta
+\end{equation*}
+%
+for every $\phi : A_i \to A_i$, for every $i \in I$. For $\eta=0$, we say `correlated equilibrium' (simpliciter). A Nash equilibrium is a correlated equilibrium $\nu$ such that
+%
+\begin{equation*}
+	\nu(a) = \prod_{i \in I} \nu_i(a_i)
+	\quad\forall a \in A
+\end{equation*}
+%
+for some collection of distributions $\{ \nu_i \}_{i \in I}$ on $\{ A_i \}_{i \in I}$.
+
+A (mixed) strategy for $i$ in the Bayesian game $\gamma$ is a $\Pi_i$-measurable map $\sigma_i : \Omega \to \Delta(A_i)$. A strategy profile is a map $\sigma : \Omega \to \Delta(A)$ whose marginals $\{ \sigma_i \}_{i \in I}$ are strategies. Extend $u_i$ to mixed strategies in the usual way. A strategy profile $\sigma$ is a Bayes--Nash equilibrium (BNE) of $\gamma$ iff
+%
+\begin{equation*}
+	\sum_{\omega \in \Omega} u_i(\sigma_i(\omega),\sigma_{-i}(\omega),G(\omega)) \mu(\omega)
+	\geq \sum_{\omega \in \Omega} u_i(\phi(\omega),\sigma_{-i}(\omega),G(\omega)) \mu(\omega)
+\end{equation*}
+%
+for any $\Pi_i$-measurable $\phi : \Omega \to A_i$, for every $i \in I$. $\nu \in \Delta(A)$ is a BNE action distribution for $\gamma$ iff some BNE $\sigma$ of $\gamma$ induces it according to
+%
+\begin{equation*}
+	\nu(\cdot) = \sum_{\omega \in \Omega} \sigma(\omega)(\cdot) \mu(\omega) .
+\end{equation*}
+
+
+For $\eps \in [0,1]$, the Bayesian game $\gamma$ is an $\eps$-elaboration of the complete-information game $g$ iff $\mu(G^{-1}(g)) = 1-\eps$, i.e. payoffs are given by $g$ with probability $1-\eps$. Let $\Gamma(g,\eps)$ denote the set of all $\eps$-elaborations of $g$. (A very large set.)
+
+$g$ is obviously a $0$-elaboration of itself; we might call it the degenerate $0$-elaboration. But there are also $0$-elaborations with other information structures which allow players to correlate their actions. In fact, an action distribution $\nu \in \Delta(A)$ is a BNE action distribution of some $\gamma \in \Gamma(g,0)$ iff it is a correlated equilibrium of $g$ \parencite{Aumann1987}.
+
+Endow $\Delta(A)$ with the uniform metric:
+%
+\begin{equation*}
+	\norm*{\nu-\nu'} \coloneqq \max_{a \in A} \abs*{ \nu(a)-\nu'(a) }
+	\quad\text{for $\nu,\nu' \in \Delta(A)$} .
+\end{equation*}
+%
+`$\nu$ is $\delta$-close to $\nu'$' will serve as a synonym for `$\norm*{\nu-\nu'} \leq \delta$'. We will measure the distance between strategy profiles in terms of the distance between the action distributions they induce. It is important to note this is an ex-ante (or `on-average') notion of closeness: two very different strategy profiles can induce the same action distribution.
+%
+\begin{definition}[Kajii--Morris robustness]
+	%
+	An action distribution $\nu \in \Delta(A)$ is KM-robust to incomplete information in the complete-information game $g$ iff for every $\delta>0$, there is $\widebar{\eps}>0$ such that every $\gamma \in \Union_{\eps \in [0,\widebar{\eps}]} \Gamma(g,\eps)$ has a BNE action distribution $\delta$-close to $\nu$.
+	%
+\end{definition}
+
+Since $\Gamma(g,0)$ contains the degenerate $0$-elaboration (i.e. $g$ itself), any robust action distribution must be a Nash (hence correlated) equilibrium. We can therefore speak of robust equilibria rather than of robust action distributions. The converse is not true: there are open sets of games that have strict Nash equilibria but no robust equilibria (see section 3.1 of the paper).
+
+KM-robustness is a lower hemicontinuity condition: for any equilibrium $\sigma$ of $g$, any nearby game (=elaboration) must have an equilibrium close to $\sigma$. (Note the order of the quanitifiers: $\forall$/$\exists$.) We take `nearby game' to mean `$\eps$-elaboration for $\eps$ small', and `nearby equilibrium' to mean `action distributions close in the uniform metric'.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Unique correlated equilibria are KM-robust}
+\label{sec:robustness:KajiiMorris:unique_CE}
+
+Kajii and Morris's (\citeyear{KajiiMorris1997ecta}) first positive robustness result is as follows.
+%
+\begin{proposition}[unique CE]
+	%
+	\label{proposition:KM_CE}
+	%
+	If $\nu$ is the unique correlated equilibrium of $g$, then $\nu$ is KM-robust in $g$.
+	%
+\end{proposition}
+
+The usefulness of this result is limited by the fact that few games have a unique correlated equilibrium. The authors list some stringent sufficient conditions for a game to have a unique correlated equilibrium on p. 1294.
+
+
+The proof is pretty easy. Recall Aumann's (\citeyear{Aumann1987}) result that $\nu$ is the action distribution induced by a BNE of some $\gamma \in \Gamma(g,0)$ iff it is a correlated equilibrium. A small modification to the (straightforward) proof of the `only if' direction of Aumann's result yields the following:
+%
+\begin{lemma}
+	%
+	For any $g$ and $\eta>0$, there is $\widebar{\eps}>0$ such that every BNE action distribution of every $\gamma \in \Union_{\eps \in [0,\widebar{\eps}]} \Gamma(g,\eps)$ is an $\eta$-correlated equilibrium of $g$.
+	%
+\end{lemma}
+
+\begin{corollary}
+	%
+	\label{corollary:KM_CE}
+	%
+	Suppose that $\nu_n$ is a BNE action distribution of $\gamma_n \in \Gamma(g,\eps_n)$ for each $n \in \N$ and that $\eps_n \conv 0$. Then there is a subsequence of $\{ \nu_n \}$ that converges to a correlated equilibrium of $g$.
+	%
+\end{corollary}
+
+\begin{proof}[Proof of \Cref{proposition:KM_CE}]
+	%
+	Suppose that $\nu$ is the unique correlated equilibrium of $g$, and that it is not KM-robust. Then there is a sequence $\{\gamma_n\}$ of elaborations $\gamma_n \in \Gamma(g,\eps_n)$ with $\eps_n \conv 0$ such that for any sequence of BNE action distributions $\{ \nu_n \}$ of $\{ \gamma_n \}$, $\left\{ \norm*{ \nu_n - \nu } \right\}$ is bounded away from zero. On the other hand, $\{ \nu_n \}$ has a subsequence converging to $\nu$ by \Cref{corollary:KM_CE}. Contradiction!
+	%
+\end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\texorpdfstring{$p$}{p}-dominant equilibria
+	(for \texorpdfstring{$p$}{p} small) are KM-robust}
+\label{sec:robustness:KajiiMorris:p_dominant}
+
+Kajii and Morris's (\citeyear{KajiiMorris1997ecta}) second positive robustness result makes use of the line of reasoning suggested in earlier sections. First, a result along the lines of \Cref{theorem:MondererSamet} (p. \pageref{theorem:MondererSamet}) tells us that if payoffs are common $p$-belief with high probability, then lower hemicontinuity obtains. Second, the critical path result (p. \pageref{theorem:MS_Cp_properties_1/2}) tells us that for $\Omega$ countable and $p<1/\abs*{I}$, $p$-belief of payoffs with high probability implies common $p$-belief of payoffs with high probability.
+
+An action profile $a \in A$ is $p$-dominant in $g$ iff for every $i \in I$ and every $\lambda \in \Delta(A_{-i})$ with $\lambda(a_{-i}) \geq p$,
+%
+\begin{equation*}
+	\sum_{a_{-i} \in A_{-i}} u_i(a_i,a_{-i},g) \lambda(a_{-i})
+	\geq \sum_{a_{-i} \in A_{-i}} u_i(a_i',a_{-i},g) \lambda(a_{-i})
+	\quad\forall a_i' \in A_i .
+\end{equation*}
+%
+Dominant-strategy equilibria are $0$-dominant, and pure-strategy Nash equilibria are $1$-dominant. Any strict Nash equilibrium is $p$-dominant for some $p<1$.
+So a Nash equilibrium is `more dominant' if its $p$ is lower.
+
+
+The requisite `result along the lines of \Cref{theorem:MondererSamet}' is the following. The proof is easy---see the pp. 1297--8 of the paper.
+%
+\begin{lemma}
+	%
+	\label{lemma:KM_p_dom}
+	%
+	Suppose that $a \in A$ is $p$-dominant in $g$, that $\gamma \in \Gamma(g,\eps)$ for some $\eps>0$, and that $G^{-1}(g)$ is commonly $p$-believed at some state $\omega \in \Omega$. Then $\gamma$ has a BNE $\sigma$ such that $\sigma(\cdot)(a)=1$.
+	%
+\end{lemma}
+
+\begin{proposition}[$p$-dominant]
+	%
+	\label{proposition:KM_p_dom}
+	%
+	If $a$ is a $p$-dominant equilibrium of $g$ for $p<1/\abs*{I}$, then the action distribution degenerate at $a$ is KM-robust in $g$.
+	%
+\end{proposition}
+
+\begin{proof}
+	%
+	Let $a$ be $p$-dominant in $g$ for $p<1/\abs*{I}$, and write $\nu^a$ for the action distribution degenerate at $a$. Fix $\delta>0$. By the critical path result (p. \pageref{theorem:MS_Cp_properties_1/2}), we can find $\eps>0$ such that for any
+	%
+	\begin{equation*}
+		\gamma \coloneqq \left(
+		I, \{ A_i \}_{i \in I}, \mathcal{G}, G, (\Omega,\Sigma), \{\Pi_i,\mu_i\}_{i \in I}
+		\right)
+	\end{equation*}
+	%
+	in $\Gamma(g,\eps)$, $\PP(G^{-1}(g)) > 1-\eps$ implies $\PP(C^p(G^{-1}(g))) > 1-\delta$. It follows by \Cref{lemma:KM_p_dom} that $\gamma$ has a BNE $\sigma$ such that $\sigma(\cdot)(a)=1$, and hence that $\gamma$ has a BNE action distribution $\nu$ s.t. $\nu(a) \geq \PP(C^p(G^{-1}(g))) > 1-\delta$. So for any $\delta>0$, there's a BNE action distribution $\nu$ s.t. $\norm*{ \nu - \nu^a } < \delta$.
+	%
+\end{proof}
+
+A corollary is that in $2 \times 2$ games, a strictly risk-dominant equilibrium is KM-robust. This substantially strengthens Carlsson and van Damme's (\citeyear{CarlssonVandamme1993}) global-games/`robustness' argument for risk dominance. (Because their result only concerns robustness to a very small class of elaborations.)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Extensions}
+\label{sec:robustness:KajiiMorris:extensions}
+
+\textcite{OyamaTercieux2010} study a strengthening of KM-robustness that allows for elaborations without a common prior. They show that Kajii and Morris's (\citeyear{KajiiMorris1997ecta}) positive results about robustness break down spectacularly: for generic games, a pure-strategy equilibrium is robust in this sense iff it is uniquely rationalisable!%
+	\footnote{This is obviously related to \textcite{WeinsteinYildiz2007}, discussed below.}
+
+Kajii and Morris's (\citeyear{KajiiMorris1997ecta}) sufficient conditions for robustness in general games are fairly stringent. By limiting attention to a smaller class of games, we might hope to find tighter sufficient conditions for robustness. In this vein, \textcite{Ui2001} shows that the potential-maximiser in a cardinal potential game is always robust. \textcite{MorrisUi2005} extend his result to ordinal potential games. There are other examples.
+
+Kajii and Morris's (\citeyear{KajiiMorris1997ecta}) results are for games in normal form. We might also be interested in what robustness demands in extensive-form games. \textcite{ChassangTakahashi2011} extend the critical path result (p. \pageref{theorem:MS_Cp_properties_1/2}) to repeated games, and use it to develop a recursive characterisation of KM-robustness in repeated games. (And then prove a robust folk theorem, and study robust cooperation in the repeated prisoners' dilemma).%
+	\footnote{Unsurprisingly, there are some technical issues that have to be dealt with. One of them is that $G^{-1}(g)$ needs to be redefined slightly.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Robustness of refinements}
+\label{sec:robustness:refinement_robustness}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+KM-robustness is just lower hemicontinuity: for any equilibrium $\sigma$ of $g$, any nearby game (=elaboration) must have an equilibrium close to $\sigma$. The two quantifiers are, respectively, `$\forall$ nearby games' and `$\exists$ nearby equilibrium'. We can ask other robustness-type questions by fiddling with the quantifiers. `$\forall$ nearby games'/`$\forall$ nearby equilibria' is obviously too demanding a notion of robustness (due to equilibrium multiplicity), so discard that one.
+
+Robustness notions with $\exists$ as the first quantifier are too weak since every game is nearby itself. One way to obtain a stronger robustness concept is to replace `$\exists$ nearby game' with `$\exists$ \emph{interesting} nearby game'. In particular, we require there to be a nearby game that satisfies a payoff richness condition to the effect that every action is strictly dominant for some type / with positive probability.
+
+The idea is that if an equilibrium can be `justified' by some nearby payoff-rich games, then an analyst with imperfect information about payoffs cannot rule out that it will be played. Such an equilibrium is `robust to refinement': it cannot credibly be refined away. If we obtain a positive result about some notion of robustness of this type, then we can conclude that any refinement that rules it out is a `non-robust' refinement.
+
+The two main papers with refinement-killing results of this type are \textcite{DekelFudenberg1990} and \textcite{WeinsteinYildiz2007}.%
+	\footnote{As in \textcite{KajiiMorris1997ecta}, the positive robustness results in both of these papers are arrived at via a critical path result that is derived using a contagion argument.}
+The former use a notion of robustness with `$\exists$ nearby equilibrium', whereas the latter use `$\forall$ nearby equilibrium'. An additional important difference is that they use different notion of closeness of games. \textcite{DekelFudenberg1990} (like \textcite{KajiiMorris1997ecta}) use an ex-ante notion of closeness of games: two games are close iff payoffs are close with high prior probability. \textcite{WeinsteinYildiz2007} take the `interim perspective' (i.e. they eschew priors entirely), and so measure closeness of games according to closeness in the product topology on the universal type space.%
+	\footnote{Although their notion of closeness does not involve prior probabilities, \textcite{WeinsteinYildiz2007} show that their results hold even if we restrict attention to types that are consistent with a common prior.}
+
+\textcite{DekelFudenberg1990} show that an action profile is refinement-robust in their sense iff it lies in $S^\infty W$, the set of actions surviving one round of deletion of weakly dominated strategies followed by ordinary iterated deletion of strictly dominated strategies.%
+	\footnote{\textcite{Borgers1994} similarly shows that the set of actions consistent with common $p$-belief in rationality shrinks to $S^\infty W$ as $p \conv 1$. The idea is similar: when players entertain small doubts about other players' rationality, weakly dominated actions are ruled out. So $S^\infty W$, a concept developed in the robustness literature, has epistemic relevance.}
+They conclude that any refinement of $S^\infty W$ is non-robust; hence in particular, any refinement of rationalisability ($S^\infty$) is non-robust.%
+	\footnote{This result has an antecedent in Fudenberg, Kreps and Levine (\citeyear{FudenbergKrepsLevine1988}), who showed that refinements of Nash equilibrium are non-robust.}
+
+Modulo the difference in how closeness of games is measured, Weinstein and Y{\i}ld{\i}z's (\citeyear{WeinsteinYildiz2007}) notion of robustness is stronger than Dekel and Fudenberg's (\citeyear{DekelFudenberg1990}). They correspondingly obtain a slightly weaker result: that any rationalisable action profile is refinement-robust in their sense, so any refinement of rationalisability is non-robust.
+
+Although both results show that refinements of rationalisability are non-robust in some sense, the latter is far more problematic for refinements. If a refinement is non-robust in Dekel and Fudenberg's (\citeyear{DekelFudenberg1990}) sense, then there are games for which it rules out equilibria that can be justified by some equlibrium selection from some payoff-rich class of nearby games. A believer in refinements may respond that there may very well be another equilibrium selection that is far away. There is no such escape from \textcite{WeinsteinYildiz2007}: their result says that every rationalisable profile in any game is \emph{uniquely} rationalisable in a nearby game.
+
+
+
+%______________________________________________________________________________
+
+
+
+
+%       _                               _ _               
+%      / \   _ __  _ __   ___ _ __   __| (_) ___ ___  ___ 
+%     / _ \ | '_ \| '_ \ / _ \ '_ \ / _` | |/ __/ _ \/ __|
+%    / ___ \| |_) | |_) |  __/ | | | (_| | | (_|  __/\__ \
+%   /_/   \_\ .__/| .__/ \___|_| |_|\__,_|_|\___\___||___/
+%           |_|   |_|                                     
+
+
+%\pagebreak
+%\begin{appendices}
+
+
+
+%\end{appendices}
+
+
+
+%______________________________________________________________________________
+
+
+
+
+%    ____  _ _     _ _                             _           
+%   | __ )(_) |__ | (_) ___   __ _ _ __ __ _ _ __ | |__  _   _ 
+%   |  _ \| | '_ \| | |/ _ \ / _` | '__/ _` | '_ \| '_ \| | | |
+%   | |_) | | |_) | | | (_) | (_| | | | (_| | |_) | | | | |_| |
+%   |____/|_|_.__/|_|_|\___/ \__, |_|  \__,_| .__/|_| |_|\__, |
+%                            |___/          |_|          |___/ 
+
+
+\pagebreak
+\printbibliography[heading=bibintoc]
+
+
+
+%______________________________________________________________________________
+
+
+
+
+\end{document}
