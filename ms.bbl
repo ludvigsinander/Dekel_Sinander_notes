@@ -1,0 +1,1543 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{apa/global/}
+    \entry{Ahn2007}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7d8640bac5d2af915bc425f4cea9fc95}{%
+           family={Ahn},
+           familyi={A\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d8640bac5d2af915bc425f4cea9fc95}
+      \strng{fullhash}{7d8640bac5d2af915bc425f4cea9fc95}
+      \strng{authornamehash}{7d8640bac5d2af915bc425f4cea9fc95}
+      \strng{authorfullhash}{7d8640bac5d2af915bc425f4cea9fc95}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Hierarchies of ambiguous beliefs}
+      \field{volume}{136}
+      \field{year}{2007}
+      \field{pages}{286\bibrangedash 301}
+      \range{pages}{16}
+    \endentry
+    \entry{ArmbrusterBoge1979}{incollection}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=58aa437d37c1d212cd64151c9ae34d3f}{%
+           family={Armbruster},
+           familyi={A\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{uniquename=0,hash=d67a49b40157d0a4d2a64785fe2dfc96}{%
+           family={Böge},
+           familyi={B\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=469235b467d4ac5fd7bca36e443035ab}{%
+           family={Moeschlin},
+           familyi={M\bibinitperiod},
+           given={Otto},
+           giveni={O\bibinitperiod}}}%
+        {{hash=934d59a2cc4f6375762b43a345418f11}{%
+           family={Pallaschke},
+           familyi={P\bibinitperiod},
+           given={Diethard},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{93ce669f0f18263b8472a59d2674d44d}
+      \strng{fullhash}{93ce669f0f18263b8472a59d2674d44d}
+      \strng{authornamehash}{93ce669f0f18263b8472a59d2674d44d}
+      \strng{authorfullhash}{93ce669f0f18263b8472a59d2674d44d}
+      \strng{editornamehash}{848e0cf55f6428e6f07bca15e6d17b8a}
+      \strng{editorfullhash}{848e0cf55f6428e6f07bca15e6d17b8a}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booksubtitle}{{P}roceedings of the seminar on game theory and related topics, {B}onn/{H}agen, 26--29 {S}eptember, 1978}
+      \field{booktitle}{Game theory and related topics}
+      \field{langid}{american}
+      \field{title}{{B}ayesian game theory}
+      \field{year}{1979}
+      \field{pages}{17\bibrangedash 28}
+      \range{pages}{12}
+    \endentry
+    \entry{Aumann1976}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=26fdc5211df7c045b0392a6d01a80ca1}{%
+           family={Aumann},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{fullhash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{authornamehash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{authorfullhash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Statistics}
+      \field{langid}{american}
+      \field{title}{Agreeing to disagree}
+      \field{volume}{4}
+      \field{year}{1976}
+      \field{pages}{1236\bibrangedash 1239}
+      \range{pages}{4}
+    \endentry
+    \entry{Aumann1987}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=26fdc5211df7c045b0392a6d01a80ca1}{%
+           family={Aumann},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{fullhash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{authornamehash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{authorfullhash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Correlated equilibrium as an expression of {B}ayesian rationality}
+      \field{volume}{55}
+      \field{year}{1987}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+    \endentry
+    \entry{Aumann1999I}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=26fdc5211df7c045b0392a6d01a80ca1}{%
+           family={Aumann},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{fullhash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{authornamehash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \strng{authorfullhash}{26fdc5211df7c045b0392a6d01a80ca1}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Game Theory}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{subtitle}{Knowledge}
+      \field{title}{Interactive epistemology {I}}
+      \field{volume}{28}
+      \field{year}{1999}
+      \field{pages}{263\bibrangedash 300}
+      \range{pages}{38}
+    \endentry
+    \entry{BattigalliSiniscalchi1999}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=36a7e8aa3fff78d70118a2657a02d2f6}{%
+           family={Battigalli},
+           familyi={B\bibinitperiod},
+           given={Pierpaolo},
+           giveni={P\bibinitperiod}}}%
+        {{uniquename=0,hash=b459eb2d21d4e35b35f68fc1e7a71f13}{%
+           family={Siniscalchi},
+           familyi={S\bibinitperiod},
+           given={Marciano},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a50e44dbb5d4d4d79adb71ebc3a71190}
+      \strng{fullhash}{a50e44dbb5d4d4d79adb71ebc3a71190}
+      \strng{authornamehash}{a50e44dbb5d4d4d79adb71ebc3a71190}
+      \strng{authorfullhash}{a50e44dbb5d4d4d79adb71ebc3a71190}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Hierarchies of conditional beliefs and interactive epistemology in dynamic games}
+      \field{volume}{88}
+      \field{year}{1999}
+      \field{pages}{188\bibrangedash 230}
+      \range{pages}{43}
+    \endentry
+    \entry{Billingsley1995}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=1510894b195c898f61d6cbd12bfaf118}{%
+           family={Billingsley},
+           familyi={B\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{1510894b195c898f61d6cbd12bfaf118}
+      \strng{fullhash}{1510894b195c898f61d6cbd12bfaf118}
+      \strng{authornamehash}{1510894b195c898f61d6cbd12bfaf118}
+      \strng{authorfullhash}{1510894b195c898f61d6cbd12bfaf118}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{langid}{american}
+      \field{title}{Probability and measure}
+      \field{year}{1995}
+    \endentry
+    \entry{Billingsley1999}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=1510894b195c898f61d6cbd12bfaf118}{%
+           family={Billingsley},
+           familyi={B\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{1510894b195c898f61d6cbd12bfaf118}
+      \strng{fullhash}{1510894b195c898f61d6cbd12bfaf118}
+      \strng{authornamehash}{1510894b195c898f61d6cbd12bfaf118}
+      \strng{authorfullhash}{1510894b195c898f61d6cbd12bfaf118}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{langid}{american}
+      \field{title}{Convergence of probability measures}
+      \field{year}{1999}
+    \endentry
+    \entry{BogeEisele1979}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=d67a49b40157d0a4d2a64785fe2dfc96}{%
+           family={Böge},
+           familyi={B\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{uniquename=0,hash=1d6976af8db0567b9b18d42fc0cdf6f3}{%
+           family={Eisele},
+           familyi={E\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{9744a85326255abc7597d70788747bbf}
+      \strng{fullhash}{9744a85326255abc7597d70788747bbf}
+      \strng{authornamehash}{9744a85326255abc7597d70788747bbf}
+      \strng{authorfullhash}{9744a85326255abc7597d70788747bbf}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Game Theory}
+      \field{langid}{american}
+      \field{number}{4}
+      \field{title}{On solutions of {B}ayesian games}
+      \field{volume}{8}
+      \field{year}{1979}
+      \field{pages}{193\bibrangedash 215}
+      \range{pages}{23}
+    \endentry
+    \entry{Borgers1994}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=c787b0b513113d3819b2b76ce5eeedd2}{%
+           family={Börgers},
+           familyi={B\bibinitperiod},
+           given={Tilman},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c787b0b513113d3819b2b76ce5eeedd2}
+      \strng{fullhash}{c787b0b513113d3819b2b76ce5eeedd2}
+      \strng{authornamehash}{c787b0b513113d3819b2b76ce5eeedd2}
+      \strng{authorfullhash}{c787b0b513113d3819b2b76ce5eeedd2}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Weak dominance and approximate common knowledge}
+      \field{volume}{64}
+      \field{year}{1994}
+      \field{pages}{265\bibrangedash 276}
+      \range{pages}{12}
+    \endentry
+    \entry{BrandenburgerDekel1993}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=c5c98eb40ab63255e62f403c442b66fa}{%
+           family={Brandenburger},
+           familyi={B\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=fa9edf7ae3c3e6a1759127408c5331fa}{%
+           family={Dekel},
+           familyi={D\bibinitperiod},
+           given={Eddie},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5ed5ddd27b8f19f0a235fd7e3c03d85}
+      \strng{fullhash}{f5ed5ddd27b8f19f0a235fd7e3c03d85}
+      \strng{authornamehash}{f5ed5ddd27b8f19f0a235fd7e3c03d85}
+      \strng{authorfullhash}{f5ed5ddd27b8f19f0a235fd7e3c03d85}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Hierarchies of beliefs and common knowledge}
+      \field{volume}{59}
+      \field{year}{1993}
+      \field{pages}{189\bibrangedash 198}
+      \range{pages}{10}
+    \endentry
+    \entry{CarlssonVandamme1993}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=dec041d2766c827f04eab2f1a3342dd6}{%
+           family={Carlsson},
+           familyi={C\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{uniquename=0,hash=79d958bdb1b72676f5eaed520845ddca}{%
+           family={{van Damme}},
+           familyi={v\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{641c2cd09f45e42a01962300d932b4b0}
+      \strng{fullhash}{641c2cd09f45e42a01962300d932b4b0}
+      \strng{authornamehash}{641c2cd09f45e42a01962300d932b4b0}
+      \strng{authorfullhash}{641c2cd09f45e42a01962300d932b4b0}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{5}
+      \field{title}{Global games and equilibrium selection}
+      \field{volume}{61}
+      \field{year}{1993}
+      \field{pages}{989\bibrangedash 1018}
+      \range{pages}{30}
+    \endentry
+    \entry{ChassangTakahashi2011}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=f74760d49af6c86c1b6d9f468757f34d}{%
+           family={Chassang},
+           familyi={C\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=c25a624a57cf8f70adef4febf7240b2e}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={Satoru},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5a4e2d942e721d12ef26a70d58d7eda}
+      \strng{fullhash}{d5a4e2d942e721d12ef26a70d58d7eda}
+      \strng{authornamehash}{d5a4e2d942e721d12ef26a70d58d7eda}
+      \strng{authorfullhash}{d5a4e2d942e721d12ef26a70d58d7eda}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theoretical Economics}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Robustness to incomplete information in repeated games}
+      \field{volume}{6}
+      \field{year}{2011}
+      \field{pages}{49\bibrangedash 93}
+      \range{pages}{45}
+    \endentry
+    \entry{Chen2010}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=05239a28a326202211635642451536ee}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yi-Chun},
+           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{05239a28a326202211635642451536ee}
+      \strng{fullhash}{05239a28a326202211635642451536ee}
+      \strng{authornamehash}{05239a28a326202211635642451536ee}
+      \strng{authorfullhash}{05239a28a326202211635642451536ee}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Games and Economic Behavior}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Universality of the {E}pstein-{W}ang type structure}
+      \field{volume}{68}
+      \field{year}{2010}
+      \field{pages}{389\bibrangedash 402}
+      \range{pages}{14}
+    \endentry
+    \entry{DekelFudenberg1990}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=fa9edf7ae3c3e6a1759127408c5331fa}{%
+           family={Dekel},
+           familyi={D\bibinitperiod},
+           given={Eddie},
+           giveni={E\bibinitperiod}}}%
+        {{uniquename=0,hash=590edd5dea58f11155a2e574136ff683}{%
+           family={Fudenberg},
+           familyi={F\bibinitperiod},
+           given={Drew},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{56a23e5d5498fa5bb0efad8bdc931537}
+      \strng{fullhash}{56a23e5d5498fa5bb0efad8bdc931537}
+      \strng{authornamehash}{56a23e5d5498fa5bb0efad8bdc931537}
+      \strng{authorfullhash}{56a23e5d5498fa5bb0efad8bdc931537}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{Rational behavior with payoff uncertainty}
+      \field{volume}{52}
+      \field{year}{1990}
+      \field{pages}{243\bibrangedash 267}
+      \range{pages}{25}
+    \endentry
+    \entry{DekelFudenbergMorris2006}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=fa9edf7ae3c3e6a1759127408c5331fa}{%
+           family={Dekel},
+           familyi={D\bibinitperiod},
+           given={Eddie},
+           giveni={E\bibinitperiod}}}%
+        {{uniquename=0,hash=590edd5dea58f11155a2e574136ff683}{%
+           family={Fudenberg},
+           familyi={F\bibinitperiod},
+           given={Drew},
+           giveni={D\bibinitperiod}}}%
+        {{uniquename=0,hash=7a3ea81d7f286c0e25d9b1d4fab70e2e}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c3f0f3be4c7d233f928cd6b86ee9535}
+      \strng{fullhash}{5c3f0f3be4c7d233f928cd6b86ee9535}
+      \strng{authornamehash}{5c3f0f3be4c7d233f928cd6b86ee9535}
+      \strng{authorfullhash}{5c3f0f3be4c7d233f928cd6b86ee9535}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theoretical Economics}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{title}{Topologies on types}
+      \field{volume}{1}
+      \field{year}{2006}
+      \field{pages}{275\bibrangedash 309}
+      \range{pages}{35}
+    \endentry
+    \entry{EpsteinPeters1999}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=4052fd2f5b044d04c9c0f319c6f36eaf}{%
+           family={Epstein},
+           familyi={E\bibinitperiod},
+           given={Larry\bibnamedelima G.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{uniquename=0,hash=a2485cb9a6567160e7daa53b65b248ee}{%
+           family={Peters},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9edb891e6539d8574f219867cb323573}
+      \strng{fullhash}{9edb891e6539d8574f219867cb323573}
+      \strng{authornamehash}{9edb891e6539d8574f219867cb323573}
+      \strng{authorfullhash}{9edb891e6539d8574f219867cb323573}
+      \field{sortinit}{E}
+      \field{sortinithash}{07bbd5a529b5beaa311df5be05b874bc}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{A revelation principle for competing mechanisms}
+      \field{volume}{88}
+      \field{year}{1999}
+      \field{pages}{119\bibrangedash 160}
+      \range{pages}{42}
+    \endentry
+    \entry{EpsteinWang1996}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=4052fd2f5b044d04c9c0f319c6f36eaf}{%
+           family={Epstein},
+           familyi={E\bibinitperiod},
+           given={Larry\bibnamedelima G.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{uniquename=0,hash=bcac2ac245dbd1e4228bc69249b3c26b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Tan},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f59f31845ac1213414e68668f367a8d}
+      \strng{fullhash}{3f59f31845ac1213414e68668f367a8d}
+      \strng{authornamehash}{3f59f31845ac1213414e68668f367a8d}
+      \strng{authorfullhash}{3f59f31845ac1213414e68668f367a8d}
+      \field{sortinit}{E}
+      \field{sortinithash}{07bbd5a529b5beaa311df5be05b874bc}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{6}
+      \field{title}{`{B}eliefs about beliefs' without probabilities}
+      \field{volume}{64}
+      \field{year}{1996}
+      \field{pages}{1343\bibrangedash 1373}
+      \range{pages}{31}
+    \endentry
+    \entry{EpsteinZin1989}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=4052fd2f5b044d04c9c0f319c6f36eaf}{%
+           family={Epstein},
+           familyi={E\bibinitperiod},
+           given={Larry\bibnamedelima G.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{uniquename=0,hash=423597bdfdee360e5b044f11a5543311}{%
+           family={Zin},
+           familyi={Z\bibinitperiod},
+           given={Stanley\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd9f920c54e5b23b5f67de96a5e230d6}
+      \strng{fullhash}{bd9f920c54e5b23b5f67de96a5e230d6}
+      \strng{authornamehash}{bd9f920c54e5b23b5f67de96a5e230d6}
+      \strng{authorfullhash}{bd9f920c54e5b23b5f67de96a5e230d6}
+      \field{sortinit}{E}
+      \field{sortinithash}{07bbd5a529b5beaa311df5be05b874bc}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{4}
+      \field{subtitle}{A theoretical framework}
+      \field{title}{Substitution, risk aversion, and the temporal behavior of consumption and asset returns}
+      \field{volume}{57}
+      \field{year}{1989}
+      \field{pages}{937\bibrangedash 969}
+      \range{pages}{33}
+    \endentry
+    \entry{FudenbergKrepsLevine1988}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=590edd5dea58f11155a2e574136ff683}{%
+           family={Fudenberg},
+           familyi={F\bibinitperiod},
+           given={Drew},
+           giveni={D\bibinitperiod}}}%
+        {{uniquename=0,hash=c3889fa5ae7d9ac8733d27d35641a73f}{%
+           family={Kreps},
+           familyi={K\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{uniquename=0,hash=b1183723ece142a1ad45a9836c7ab197}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{e9dd5e2d0328985acd678e5ec49ef5e4}
+      \strng{fullhash}{e9dd5e2d0328985acd678e5ec49ef5e4}
+      \strng{authornamehash}{e9dd5e2d0328985acd678e5ec49ef5e4}
+      \strng{authorfullhash}{e9dd5e2d0328985acd678e5ec49ef5e4}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{On the robustness of equilibrium refinements}
+      \field{volume}{44}
+      \field{year}{1988}
+      \field{pages}{354\bibrangedash 380}
+      \range{pages}{27}
+    \endentry
+    \entry{FudenbergTirole1991}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=590edd5dea58f11155a2e574136ff683}{%
+           family={Fudenberg},
+           familyi={F\bibinitperiod},
+           given={Drew},
+           giveni={D\bibinitperiod}}}%
+        {{uniquename=0,hash=00e537376470e49a45c05eab98111caa}{%
+           family={Tirole},
+           familyi={T\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{13b2de8a5a2f3daffc85eba8dbd0910d}
+      \strng{fullhash}{13b2de8a5a2f3daffc85eba8dbd0910d}
+      \strng{authornamehash}{13b2de8a5a2f3daffc85eba8dbd0910d}
+      \strng{authorfullhash}{13b2de8a5a2f3daffc85eba8dbd0910d}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{american}
+      \field{title}{Game theory}
+      \field{year}{1991}
+    \endentry
+    \entry{GulPesendorfer2001}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=693f6d69722f6e4713602c135895feca}{%
+           family={Gül},
+           familyi={G\bibinitperiod},
+           given={Faruk},
+           giveni={F\bibinitperiod}}}%
+        {{uniquename=0,hash=f603a2e18780c6f83b9a46e7f339860e}{%
+           family={Pesendorfer},
+           familyi={P\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8c1736493ccc74c83dca6caa131dadc}
+      \strng{fullhash}{a8c1736493ccc74c83dca6caa131dadc}
+      \strng{authornamehash}{a8c1736493ccc74c83dca6caa131dadc}
+      \strng{authorfullhash}{a8c1736493ccc74c83dca6caa131dadc}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{6}
+      \field{title}{Temptation and self-control}
+      \field{volume}{69}
+      \field{year}{2001}
+      \field{pages}{1403\bibrangedash 1435}
+      \range{pages}{33}
+    \endentry
+    \entry{GulPesendorfer2016}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=693f6d69722f6e4713602c135895feca}{%
+           family={Gül},
+           familyi={G\bibinitperiod},
+           given={Faruk},
+           giveni={F\bibinitperiod}}}%
+        {{uniquename=0,hash=f603a2e18780c6f83b9a46e7f339860e}{%
+           family={Pesendorfer},
+           familyi={P\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8c1736493ccc74c83dca6caa131dadc}
+      \strng{fullhash}{a8c1736493ccc74c83dca6caa131dadc}
+      \strng{authornamehash}{a8c1736493ccc74c83dca6caa131dadc}
+      \strng{authorfullhash}{a8c1736493ccc74c83dca6caa131dadc}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{title}{Interdependent preference models as a theory of intentions}
+      \field{volume}{165}
+      \field{year}{2016}
+      \field{pages}{179\bibrangedash 208}
+      \range{pages}{30}
+    \endentry
+    \entry{Harsanyi1967}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=0c9e8e91d39e0b996fab44e65d388a88}{%
+           family={Harsányi},
+           familyi={H\bibinitperiod},
+           given={John.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{0c9e8e91d39e0b996fab44e65d388a88}
+      \strng{fullhash}{0c9e8e91d39e0b996fab44e65d388a88}
+      \strng{authornamehash}{0c9e8e91d39e0b996fab44e65d388a88}
+      \strng{authorfullhash}{0c9e8e91d39e0b996fab44e65d388a88}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Management Science}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{subtitle}{Part {I.} {T}he basic model}
+      \field{title}{Games with incomplete information played by `{B}ayesian' players, {I--III}}
+      \field{volume}{14}
+      \field{year}{1967}
+      \field{pages}{159\bibrangedash 182}
+      \range{pages}{24}
+    \endentry
+    \entry{Heifetz1993}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=d6b5d73ba56945a3cd20758c56a2c030}{%
+           family={Heifetz},
+           familyi={H\bibinitperiod},
+           given={Aviad},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d6b5d73ba56945a3cd20758c56a2c030}
+      \strng{fullhash}{d6b5d73ba56945a3cd20758c56a2c030}
+      \strng{authornamehash}{d6b5d73ba56945a3cd20758c56a2c030}
+      \strng{authorfullhash}{d6b5d73ba56945a3cd20758c56a2c030}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Game Theory}
+      \field{langid}{american}
+      \field{number}{4}
+      \field{subtitle}{The non-compact case}
+      \field{title}{The {B}ayesian formulation of incomplete information}
+      \field{volume}{21}
+      \field{year}{1993}
+      \field{pages}{329\bibrangedash 338}
+      \range{pages}{10}
+    \endentry
+    \entry{HeifetzSamet1998}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=d6b5d73ba56945a3cd20758c56a2c030}{%
+           family={Heifetz},
+           familyi={H\bibinitperiod},
+           given={Aviad},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=ccf66b8e76f2bd19a1cf5bef179de01f}{%
+           family={Samet},
+           familyi={S\bibinitperiod},
+           given={Dov},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{acf2896732996e846f384d46ffc11553}
+      \strng{fullhash}{acf2896732996e846f384d46ffc11553}
+      \strng{authornamehash}{acf2896732996e846f384d46ffc11553}
+      \strng{authorfullhash}{acf2896732996e846f384d46ffc11553}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{Topology-free typology of beliefs}
+      \field{volume}{82}
+      \field{year}{1998}
+      \field{pages}{324\bibrangedash 341}
+      \range{pages}{18}
+    \endentry
+    \entry{HeifetzSamet1999}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=d6b5d73ba56945a3cd20758c56a2c030}{%
+           family={Heifetz},
+           familyi={H\bibinitperiod},
+           given={Aviad},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=ccf66b8e76f2bd19a1cf5bef179de01f}{%
+           family={Samet},
+           familyi={S\bibinitperiod},
+           given={Dov},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{acf2896732996e846f384d46ffc11553}
+      \strng{fullhash}{acf2896732996e846f384d46ffc11553}
+      \strng{authornamehash}{acf2896732996e846f384d46ffc11553}
+      \strng{authorfullhash}{acf2896732996e846f384d46ffc11553}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Economics}
+      \field{langid}{american}
+      \field{number}{4}
+      \field{title}{Coherent beliefs are not always types}
+      \field{volume}{32}
+      \field{year}{1999}
+      \field{pages}{475\bibrangedash 488}
+      \range{pages}{14}
+    \endentry
+    \entry{KajiiMorris1997geb}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=01c38f7bcafbb4253ec281ba9f0cf17b}{%
+           family={Kajii},
+           familyi={K\bibinitperiod},
+           given={Atsushi},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=7a3ea81d7f286c0e25d9b1d4fab70e2e}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \strng{fullhash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \strng{authornamehash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \strng{authorfullhash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extrayear}{1}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Games and Economic Behavior}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{subtitle}{The general case}
+      \field{title}{Common $p$-belief}
+      \field{volume}{18}
+      \field{year}{1997}
+      \field{pages}{73\bibrangedash 82}
+      \range{pages}{10}
+    \endentry
+    \entry{KajiiMorris1997ecta}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=01c38f7bcafbb4253ec281ba9f0cf17b}{%
+           family={Kajii},
+           familyi={K\bibinitperiod},
+           given={Atsushi},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=7a3ea81d7f286c0e25d9b1d4fab70e2e}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \strng{fullhash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \strng{authornamehash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \strng{authorfullhash}{0cd6ec1935c92ac0eaa576915a8f709c}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extrayear}{2}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{6}
+      \field{title}{The robustness of equilibria to incomplete information}
+      \field{volume}{65}
+      \field{year}{1997}
+      \field{pages}{1283\bibrangedash 1309}
+      \range{pages}{27}
+    \endentry
+    \entry{KohlbergMertens1986}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=a64cf590550de960ed882917949e5ac2}{%
+           family={Kohlberg},
+           familyi={K\bibinitperiod},
+           given={Elon},
+           giveni={E\bibinitperiod}}}%
+        {{uniquename=0,hash=1dc6b276983a15cdcf1a10efb1094883}{%
+           family={Mertens},
+           familyi={M\bibinitperiod},
+           given={Jean-Françios},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{d1088562f3ea27d49b8885f3b0d158e4}
+      \strng{fullhash}{d1088562f3ea27d49b8885f3b0d158e4}
+      \strng{authornamehash}{d1088562f3ea27d49b8885f3b0d158e4}
+      \strng{authorfullhash}{d1088562f3ea27d49b8885f3b0d158e4}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{5}
+      \field{title}{On the strategic stability of equilibria}
+      \field{volume}{54}
+      \field{year}{1986}
+      \field{pages}{1003\bibrangedash 1037}
+      \range{pages}{35}
+    \endentry
+    \entry{KrepsPorteus1978}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=c3889fa5ae7d9ac8733d27d35641a73f}{%
+           family={Kreps},
+           familyi={K\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{uniquename=0,hash=8f31ee1ccfaaba6de6e215f247079f9d}{%
+           family={Porteus},
+           familyi={P\bibinitperiod},
+           given={Evan\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{d83aa354783e98920870d7d4f3ce57ab}
+      \strng{fullhash}{d83aa354783e98920870d7d4f3ce57ab}
+      \strng{authornamehash}{d83aa354783e98920870d7d4f3ce57ab}
+      \strng{authorfullhash}{d83aa354783e98920870d7d4f3ce57ab}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Temporal resolution of uncertainty and dynamic choice theory}
+      \field{volume}{46}
+      \field{year}{1978}
+      \field{pages}{185\bibrangedash 200}
+      \range{pages}{16}
+    \endentry
+    \entry{Lipman1991}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=e2cb115728777f178b7e2465a03e6598}{%
+           family={Lipman},
+           familyi={L\bibinitperiod},
+           given={Barton\bibnamedelima L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e2cb115728777f178b7e2465a03e6598}
+      \strng{fullhash}{e2cb115728777f178b7e2465a03e6598}
+      \strng{authornamehash}{e2cb115728777f178b7e2465a03e6598}
+      \strng{authorfullhash}{e2cb115728777f178b7e2465a03e6598}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{4}
+      \field{subtitle}{Modeling limited rationality}
+      \field{title}{How to decide how to decide how to…}
+      \field{volume}{59}
+      \field{year}{1991}
+      \field{pages}{1105\bibrangedash 1125}
+      \range{pages}{21}
+    \endentry
+    \entry{MariottiMeierPiccione2005}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=32f0539c36158d52cd2124f327de76b0}{%
+           family={Mariotti},
+           familyi={M\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{uniquename=0,hash=18ef5db8814c8c1b34765f6ffdda9aa2}{%
+           family={Meier},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{uniquename=0,hash=2ff972af19f68cdcd60d4ba183d68f10}{%
+           family={Piccione},
+           familyi={P\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad6492ad9bfe534131221d0e2637f09e}
+      \strng{fullhash}{ad6492ad9bfe534131221d0e2637f09e}
+      \strng{authornamehash}{ad6492ad9bfe534131221d0e2637f09e}
+      \strng{authorfullhash}{ad6492ad9bfe534131221d0e2637f09e}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{title}{Hierarchies of beliefs for compact possibility models}
+      \field{volume}{41}
+      \field{year}{2005}
+      \field{pages}{303\bibrangedash 324}
+      \range{pages}{22}
+    \endentry
+    \entry{Meier2012}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=18ef5db8814c8c1b34765f6ffdda9aa2}{%
+           family={Meier},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{18ef5db8814c8c1b34765f6ffdda9aa2}
+      \strng{fullhash}{18ef5db8814c8c1b34765f6ffdda9aa2}
+      \strng{authornamehash}{18ef5db8814c8c1b34765f6ffdda9aa2}
+      \strng{authorfullhash}{18ef5db8814c8c1b34765f6ffdda9aa2}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Israel Journal of Mathematics}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{An infinitary probability logic for type spaces}
+      \field{volume}{192}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 58}
+      \range{pages}{58}
+    \endentry
+    \entry{MertensSorinZamir2015}{book}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=1dc6b276983a15cdcf1a10efb1094883}{%
+           family={Mertens},
+           familyi={M\bibinitperiod},
+           given={Jean-Françios},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+        {{uniquename=0,hash=f1caca30d803e08cc5861648f05e05a7}{%
+           family={Sorin},
+           familyi={S\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=68420176e255f893e9ca0fb44e166efb}{%
+           family={Zamir},
+           familyi={Z\bibinitperiod},
+           given={Shmuel},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{38e6fd85542c085c7c69d7c9005e64bd}
+      \strng{fullhash}{38e6fd85542c085c7c69d7c9005e64bd}
+      \strng{authornamehash}{38e6fd85542c085c7c69d7c9005e64bd}
+      \strng{authorfullhash}{38e6fd85542c085c7c69d7c9005e64bd}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{american}
+      \field{title}{Repeated games}
+      \field{year}{2015}
+    \endentry
+    \entry{MertensZamir1985}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=1dc6b276983a15cdcf1a10efb1094883}{%
+           family={Mertens},
+           familyi={M\bibinitperiod},
+           given={Jean-Françios},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+        {{uniquename=0,hash=68420176e255f893e9ca0fb44e166efb}{%
+           family={Zamir},
+           familyi={Z\bibinitperiod},
+           given={Shmuel},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{506f9c3b0471bef89749294284f4a618}
+      \strng{fullhash}{506f9c3b0471bef89749294284f4a618}
+      \strng{authornamehash}{506f9c3b0471bef89749294284f4a618}
+      \strng{authorfullhash}{506f9c3b0471bef89749294284f4a618}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Game Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Formulation of {B}ayesian analysis for games with incomplete information}
+      \field{volume}{14}
+      \field{year}{1985}
+      \field{pages}{1\bibrangedash 29}
+      \range{pages}{29}
+    \endentry
+    \entry{Milgrom1981ecta}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=4a72201f09391b2eccac2ca94d4a921b}{%
+           family={Milgrom},
+           familyi={M\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a72201f09391b2eccac2ca94d4a921b}
+      \strng{fullhash}{4a72201f09391b2eccac2ca94d4a921b}
+      \strng{authornamehash}{4a72201f09391b2eccac2ca94d4a921b}
+      \strng{authorfullhash}{4a72201f09391b2eccac2ca94d4a921b}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{An axiomatic characterization of common knowledge}
+      \field{volume}{49}
+      \field{year}{1981}
+      \field{pages}{219\bibrangedash 222}
+      \range{pages}{4}
+    \endentry
+    \entry{MondererSamet1989}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=7c44b0288be1cdbd928bc50643118604}{%
+           family={Monderer},
+           familyi={M\bibinitperiod},
+           given={Dov},
+           giveni={D\bibinitperiod}}}%
+        {{uniquename=0,hash=ccf66b8e76f2bd19a1cf5bef179de01f}{%
+           family={Samet},
+           familyi={S\bibinitperiod},
+           given={Dov},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b1ec58d075a0d7e0fb9d70717c9e479}
+      \strng{fullhash}{4b1ec58d075a0d7e0fb9d70717c9e479}
+      \strng{authornamehash}{4b1ec58d075a0d7e0fb9d70717c9e479}
+      \strng{authorfullhash}{4b1ec58d075a0d7e0fb9d70717c9e479}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Games and Economic Behavior}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{Approximating common knowledge with common beliefs}
+      \field{volume}{1}
+      \field{year}{1989}
+      \field{pages}{170\bibrangedash 190}
+      \range{pages}{21}
+    \endentry
+    \entry{Morris1999}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7a3ea81d7f286c0e25d9b1d4fab70e2e}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a3ea81d7f286c0e25d9b1d4fab70e2e}
+      \strng{fullhash}{7a3ea81d7f286c0e25d9b1d4fab70e2e}
+      \strng{authornamehash}{7a3ea81d7f286c0e25d9b1d4fab70e2e}
+      \strng{authorfullhash}{7a3ea81d7f286c0e25d9b1d4fab70e2e}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Game Theory}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{title}{Approximate common knowledge revisited}
+      \field{volume}{28}
+      \field{year}{1999}
+      \field{pages}{385\bibrangedash 408}
+      \range{pages}{24}
+    \endentry
+    \entry{MorrisUi2005}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=7a3ea81d7f286c0e25d9b1d4fab70e2e}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=c12dcf7af8bd76353ac93c74c5e85a53}{%
+           family={Ui},
+           familyi={U\bibinitperiod},
+           given={Takashi},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{108a46f50b1baa33daac32cac9b7c195}
+      \strng{fullhash}{108a46f50b1baa33daac32cac9b7c195}
+      \strng{authornamehash}{108a46f50b1baa33daac32cac9b7c195}
+      \strng{authorfullhash}{108a46f50b1baa33daac32cac9b7c195}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{1}
+      \field{title}{Generalized potentials and robust sets of equilibria}
+      \field{volume}{124}
+      \field{year}{2005}
+      \field{pages}{45\bibrangedash 78}
+      \range{pages}{34}
+    \endentry
+    \entry{Myerson1986}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=ed46e294842b3c9da7ff247ced2f0bde}{%
+           family={Myerson},
+           familyi={M\bibinitperiod},
+           given={Roger\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \strng{fullhash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \strng{authornamehash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \strng{authorfullhash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{Multistage games with communication}
+      \field{volume}{54}
+      \field{year}{1986}
+      \field{pages}{323\bibrangedash 358}
+      \range{pages}{36}
+    \endentry
+    \entry{Myerson1991}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=ed46e294842b3c9da7ff247ced2f0bde}{%
+           family={Myerson},
+           familyi={M\bibinitperiod},
+           given={Roger\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \strng{fullhash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \strng{authornamehash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \strng{authorfullhash}{ed46e294842b3c9da7ff247ced2f0bde}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{american}
+      \field{subtitle}{Analysis of conflict}
+      \field{title}{Game theory}
+      \field{year}{1991}
+    \endentry
+    \entry{OsborneRubinstein1994}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=7b7535f1b7f7d6a8512d7a23698d0155}{%
+           family={Osborne},
+           familyi={O\bibinitperiod},
+           given={Martin\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{uniquename=0,hash=6dd390184a4a0f79f72fd43d5772433b}{%
+           family={Rubinstein},
+           familyi={R\bibinitperiod},
+           given={Ariel},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{b4ae0c51ca83e72c10389f9bb4fa815e}
+      \strng{fullhash}{b4ae0c51ca83e72c10389f9bb4fa815e}
+      \strng{authornamehash}{b4ae0c51ca83e72c10389f9bb4fa815e}
+      \strng{authorfullhash}{b4ae0c51ca83e72c10389f9bb4fa815e}
+      \field{sortinit}{O}
+      \field{sortinithash}{f5d80ef71b5b58852663ecfd775b175a}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{american}
+      \field{title}{A course in game theory}
+      \field{year}{1994}
+    \endentry
+    \entry{OyamaTercieux2010}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=563ff19fcc614170b146b3765dbbddc2}{%
+           family={Oyama},
+           familyi={O\bibinitperiod},
+           given={Daisuke},
+           giveni={D\bibinitperiod}}}%
+        {{uniquename=0,hash=9c41ef6ea87bd7755ea0295b00dc97fa}{%
+           family={Tercieux},
+           familyi={T\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{06e4eda90acde540ae09abbc53bd9502}
+      \strng{fullhash}{06e4eda90acde540ae09abbc53bd9502}
+      \strng{authornamehash}{06e4eda90acde540ae09abbc53bd9502}
+      \strng{authorfullhash}{06e4eda90acde540ae09abbc53bd9502}
+      \field{sortinit}{O}
+      \field{sortinithash}{f5d80ef71b5b58852663ecfd775b175a}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{Robust equilibria under non-common priors}
+      \field{volume}{145}
+      \field{year}{2010}
+      \field{pages}{752\bibrangedash 784}
+      \range{pages}{33}
+    \endentry
+    \entry{Renyi1955}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=d1fe4e3577456830636963a58be0aabd}{%
+           family={Rényi},
+           familyi={R\bibinitperiod},
+           given={Alfréd},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d1fe4e3577456830636963a58be0aabd}
+      \strng{fullhash}{d1fe4e3577456830636963a58be0aabd}
+      \strng{authornamehash}{d1fe4e3577456830636963a58be0aabd}
+      \strng{authorfullhash}{d1fe4e3577456830636963a58be0aabd}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Mathematica Academiae Scientiarum Hungarica}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{title}{On a new axiomatic theory of probability}
+      \field{volume}{6}
+      \field{year}{1955}
+      \field{pages}{285\bibrangedash 335}
+      \range{pages}{51}
+    \endentry
+    \entry{Rubinstein1989}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=6dd390184a4a0f79f72fd43d5772433b}{%
+           family={Rubinstein},
+           familyi={R\bibinitperiod},
+           given={Ariel},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6dd390184a4a0f79f72fd43d5772433b}
+      \strng{fullhash}{6dd390184a4a0f79f72fd43d5772433b}
+      \strng{authornamehash}{6dd390184a4a0f79f72fd43d5772433b}
+      \strng{authorfullhash}{6dd390184a4a0f79f72fd43d5772433b}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{langid}{american}
+      \field{number}{3}
+      \field{subtitle}{Strategic behavior under `almost common knowledge'}
+      \field{title}{The electronic mail game}
+      \field{volume}{79}
+      \field{year}{1989}
+      \field{pages}{385\bibrangedash 391}
+      \range{pages}{7}
+    \endentry
+    \entry{Siniscalchi2008}{incollection}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=b459eb2d21d4e35b35f68fc1e7a71f13}{%
+           family={Siniscalchi},
+           familyi={S\bibinitperiod},
+           given={Marciano},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=f2a8c3510589c5cb358fa8a1be4cdb80}{%
+           family={Durlauf},
+           familyi={D\bibinitperiod},
+           given={Steven\bibnamedelima N.},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=cb08c67a9898681b66f5dc8afa226234}{%
+           family={Blume},
+           familyi={B\bibinitperiod},
+           given={Lawrence\bibnamedelima E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Palgrave Macmillan}%
+      }
+      \strng{namehash}{b459eb2d21d4e35b35f68fc1e7a71f13}
+      \strng{fullhash}{b459eb2d21d4e35b35f68fc1e7a71f13}
+      \strng{authornamehash}{b459eb2d21d4e35b35f68fc1e7a71f13}
+      \strng{authorfullhash}{b459eb2d21d4e35b35f68fc1e7a71f13}
+      \strng{editornamehash}{10eaa77efe87a1433b68ce952c972fa8}
+      \strng{editorfullhash}{10eaa77efe87a1433b68ce952c972fa8}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The new {P}algrave dictionary of economics}
+      \field{langid}{american}
+      \field{subtitle}{Beliefs and types}
+      \field{title}{Epistemic game theory}
+      \field{volume}{2}
+      \field{year}{2008}
+      \field{pages}{895\bibrangedash 899}
+      \range{pages}{5}
+    \endentry
+    \entry{Ui2001}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=c12dcf7af8bd76353ac93c74c5e85a53}{%
+           family={Ui},
+           familyi={U\bibinitperiod},
+           given={Takashi},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c12dcf7af8bd76353ac93c74c5e85a53}
+      \strng{fullhash}{c12dcf7af8bd76353ac93c74c5e85a53}
+      \strng{authornamehash}{c12dcf7af8bd76353ac93c74c5e85a53}
+      \strng{authorfullhash}{c12dcf7af8bd76353ac93c74c5e85a53}
+      \field{sortinit}{U}
+      \field{sortinithash}{1554584e7f69d2b4fe0a645e73d50194}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{5}
+      \field{title}{Robust equilibria of potential games}
+      \field{volume}{69}
+      \field{year}{2001}
+      \field{pages}{1373\bibrangedash 1380}
+      \range{pages}{8}
+    \endentry
+    \entry{WeinsteinYildiz2007}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=e17f0f8bd4bca71588f83f043b7eb846}{%
+           family={Weinstein},
+           familyi={W\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{uniquename=0,hash=a635d390e51a05f3afae05ecce06000c}{%
+           family={Y{ı}ld{ı}z},
+           familyi={Y\bibinitperiod},
+           given={Muhamet},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{778c4b80f7b98b742be4ef64c94a57d2}
+      \strng{fullhash}{778c4b80f7b98b742be4ef64c94a57d2}
+      \strng{authornamehash}{778c4b80f7b98b742be4ef64c94a57d2}
+      \strng{authorfullhash}{778c4b80f7b98b742be4ef64c94a57d2}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{american}
+      \field{number}{2}
+      \field{title}{A structure theorem for rationalizability with application to robust predictions of refinements}
+      \field{volume}{75}
+      \field{year}{2007}
+      \field{pages}{365\bibrangedash 400}
+      \range{pages}{36}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
