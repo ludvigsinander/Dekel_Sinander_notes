@@ -4,4 +4,4 @@ Files:
 - bibl.bib: bibliographic repository, called by ms.tex
 - COPYING.txt: license information.
 
-To produce PDF lecture notes, compile ms.tex using pdfLaTeX. Run biber to create a new .bbl file.
+To produce PDF lecture notes, compile ms.tex using pdfLaTeX and Biber.
